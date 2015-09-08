@@ -1,0 +1,33 @@
+
+\tikzset{%
+  class/.style    = {draw, thick, rectangle, minimum height = 3em,minimum width = 3em},
+  interface/.style      = {draw, circle, node distance = 2cm}, % Adder
+}
+
+\begin{tikzpicture}[auto, thick, node distance=2cm, >=triangle 45]
+\draw
+	node at (4,0) [class] (imagefile) {\Large ImageFile}
+	node at (9,0)  [class] (imatge) {\Large Imatge}
+	node at (4,-9)  [class] (visorub1) {\Large VisorUB1}
+	node at (4,-12)  [class] (gestiovisorub) {\Large GestioVisorUB}
+	node at (0,-9)  [class] (menu) {\Large Menu}
+        node at (0,-3)[interface] (inimagelist) {\Large InImageList}
+        node at (9,-6)  [class] (taulaimatges) {\Large TaulaImatges}
+        node at (4,-3)  [class] (imagelist) {\Large ImageList}
+        node at (12,0) (n1) {}
+        node at (12,-6) (n2) {}
+        node at (12,-9) (n3) {}
+        node at (9,-3)  [class] (llistaimatges) {\Large LlistaImatges};
+        
+	\draw[->](imatge) -- node {}(imagefile);
+	\draw[->,dashed](llistaimatges) -- node {}(imatge);
+	\draw[->,dashed](12,0) -- node {}(imatge);
+	\draw[dashed](12,0) -- (12,-6) -- node {}(taulaimatges);
+	\draw[dashed](12,-6) -- (12,-9) -- node {}(visorub1);
+	\draw[->,dashed](gestiovisorub) -- node {}(visorub1);
+	\draw[->,dashed](visorub1) -- node {}(menu);
+	\draw[->,dashed](visorub1) -- node {}(inimagelist);
+	\draw[->](taulaimatges) -- (0,-6) -- node {}(inimagelist);
+	\draw[->](imagelist) -- node {}(inimagelist);
+	\draw[->](llistaimatges) -- node {}(imagelist);
+\end{tikzpicture}
