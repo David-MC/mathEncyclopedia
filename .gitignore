@@ -1,3 +1,10 @@
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
