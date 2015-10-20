@@ -1,0 +1,50 @@
+\usepackage[spanish]{babel}
+
+\newcommand{\printAuthor}{David Martínez Carpena}
+\newcommand{\printTitle}{Programació 2 \\ Lliurament 1}
+\newcommand{\printDate}{\today}
+\author{\printAuthor}
+\title{\printTitle}
+\date{\printDate}
+
+%\makeindex
+
+\begin{document}
+	
+	% ======================================================================== %
+	% Tittle Page / Cover                                                      %
+	% ======================================================================== %
+	
+	\input{./tittle_page/tittle_page1.tex}
+	%\maketitle
+
+	% ======================================================================== %
+	% Indices                                                                  %
+	% ======================================================================== % 
+
+	\tableofcontents
+	% \listoffigures
+	% \listoftables
+	\clearpage
+	
+	% ======================================================================= %
+	% Content                                                                 %
+	% ======================================================================= %
+	
+	\input{./sections/mnu_ca.tex}
+	\clearpage
+	\input{./sections/geli_ca.tex}
+	\clearpage
+	\input{./sections/graphs_ca.tex}
+	%\input{./sections/graphs_en.tex}
+	\clearpage
+
+	%\input{./sections/introduccio.tex}
+	%\clearpage
+	%\input{./sections/analisi.tex}
+	%\clearpage
+	%\input{./sections/algebraicStructures.tex}
+	%\clearpage
+	%\input{./sections/resultats.tex}
+  
+\end{document}

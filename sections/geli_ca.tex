@@ -1,0 +1,468 @@
+\chapter{Geometria lineal}
+
+\section{$\mathsection$Espais afins}
+\label{ea}
+
+\begin{defn}[Espai afí]
+	Sigui $K$ un cos, $E$ un $K$-espai vectorial de dimensió finita i $A$ un cojunt tal que $A\neq\phi$. Un espai afí sobre un cos $K$ de espai director $E$ és una terna $(A,E,\phi)$ tal que:
+	$$\begin{array}{rcl}
+		\phi :A\times E	& \longrightarrow	& A 				\\
+		(p,\vv{v})	& \longmapsto		& \phi (p,\vv{v}):=p+\vv{v}	\\
+	\end{array}$$
+	Anomenarem punts als elements del conjunt $A$. A més, es verifiquen els següents axiomes:
+	\begin{itemize}
+		\item[(A1)] $\forall p\in A$, la aplicació
+		$$\begin{array}{rcl}
+			\phi_{p} :E	& \longrightarrow	& A 		\\
+			\vv{v}		& \longmapsto		& p+\vv{v}	\\
+		\end{array}$$
+		és bijectiva.
+		\item[(A2)] $\forall p\in A,\: \vv{u},\vv{v}\in E$,
+		\begin{center}
+			$\phi (p,\vv{u}+\vv{v})=\phi (\phi (p,\vv{u}),\vv{v})$ \\
+			$p+(\vv{u}+\vv{v})=(p+\vv{u})+\vv{v}$
+		\end{center}
+	\end{itemize}
+	Sigui $dim(E)=n$, definirem la dimensió de l'espai afí $A$ com $dim(A)=dim(E)=n$.
+\end{defn}
+
+\begin{exmp}
+	$dim(A)=0\Leftrightarrow E=\{ 0\}\Leftrightarrow A=\{ p\}$
+\end{exmp}
+\begin{exmp}
+	$dim(A)=1\Leftrightarrow E\cong K\Rightarrow A$ és una recta	
+\end{exmp}
+
+\begin{lem}\begin{enumerate}
+	\item $\forall p,q\in A,\: \exists !\: \vv{v}\in E$ tal que $p=q+\vv{v}$, i definim aquest vector com $\vv{v}=\vv{qp}$
+	\item (Llei de Chasles) $\vv{pr}=\vv{pq}+\vv{qr}$
+\end{enumerate}\end{lem}
+\begin{proof}\begin{enumerate}
+	\item Per $(A1)$ sabem que, \\
+	$\begin{array}{rcl}
+		\phi_{p} :E	& \longrightarrow	& A 		\\
+		\vv{v}		& \longmapsto		& q+\vv{v}	\\
+	\end{array}$ és bijectiva $\Rightarrow \exists ! \vv{v}$ tal que $\vv{v}=\phi_{p}^{-1}(p)=\phi_{p}^{-1}(q+\vv{v})$
+	\item 
+\end{enumerate}\end{proof}
+
+\subsection{Varietats lineals}
+
+\begin{defn}
+	Sigui $A$ un espai afí, amb $dim(A)=n$, i de espai director E. Una (sub)varietat lineal de $A$ és un subconjunt $\mathbb{L}\subseteq A$ de la forma $\mathbb{L}=p+F$, amb $p\in A$ com a punt de pas de $\mathbb{L}$ i $F$ un subespai vectorial de $E$ com a espai director
+	$$\mathbb{L}=\{ q\in A |\exists \vv{v}\in F, q = p + v\} \subseteq A$$
+	Si una subvarietat lineal és de dimensió $n-1$, l'anomenem hiperpla.
+\end{defn}
+
+\begin{lem}
+	Sigui $A$ un espai afí d'espai director $E$ i $\mathbb{L}$ una subvarietat lineal de $A$ amb espai director $F$, llavors $dim(\mathbb{L})=dim(F)\leq dim(E)=dim(A)$.
+\end{lem}
+
+\begin{prop}\begin{enumerate}
+	\item Si $q\in \mathbb{L}$, llavors $\mathbb{L}=p+F=q+F$, i per tant el punt de pas d'una subvarietat lineal no és únic.
+	\item Sigui $F=\{ \vv{pq}\in E$ on $p,q\in \mathbb{L}\}\Rightarrow$ El espai director d'una subvarietat lineal és únic.
+\end{enumerate}\end{prop}
+\begin{proof}\begin{enumerate}
+	\item $q\in \mathbb{L}\Rightarrow\exists\vv{v}\in F$ tal que $q=p+\vv{v}\Rightarrow p=q-\vv{v}$ \\
+	$p+F\subseteq q+F$? $w\in F$, $p+w=q-v+w=q+(-v+w)\in q+F$ \\
+	$q+F\subseteq p+F$? $w\in F$, $q+w=(p+v)+w=p+(v+w)\in p+F$
+	\item
+\end{enumerate}\end{proof}
+
+\begin{prop}
+	Sigui $f:E\longrightarrow F$ una aplicació lineal i $b\in Im(f)=f(E)\subseteq F$, llavors $f^{-1}(b)=a+Nuc(f)$ i $f(a)=b$ i $f(a')=b$, amb $a\in E$, tal que $f^{-1}(b)$ és una varietat lineal de E amb $dim(Nuc(f))=dim(E)-rang(f)$.
+\end{prop}
+\begin{exmp}\begin{enumerate}
+	\item El sistema d'equacions \\
+	$$\left.\begin{array}{rcl}
+		x-3y+2z	& =	& 	1	\\
+		y-z	& =	&	0	\\
+	\end{array}\right\}$$
+	defineix una subvarietat lineal de $\mathbb{R}^{3}$ \\
+	$\mathbb{L}=(2,1,1)+<(1,1,1)>$ \\
+	$f:\mathbb{R}^{3}\longrightarrow \mathbb{R}^{2}\hspace{5em}b=(1,0)$
+	\item Una sola equació
+	$$\begin{array}{rcl}
+		x-3y+4z+w	& =	& 6	\\
+	\end{array}$$
+	$f^{-1}(6)=\mathbb{L}=(6,0,0,0)+Nuc(f)=(6,0,0,0)+<(...),(...),(...)>$ \\
+	$f:\mathbb{R}^{3}\longrightarrow \mathbb{R}\hspace{5em}b=6$
+\end{enumerate}\end{exmp}
+
+\subsection{Referències cartesianes}
+\label{ss_refcar}
+
+\begin{defn}
+	Un sistema de coordenades de $A$ ve donat per:
+	\begin{itemize}
+		\item Un punt $P$ de $A$, que anomenem l'origen del sistema.
+		\item Una base $\vv{e_{1}},\vv{e_{2}},...,\vv{e_{n}}$ de $E$.
+	\end{itemize}
+	$$\mathcal{R}=\{P;\vv{e_{1}},\vv{e_{2}},...,\vv{e_{n}}\}$$
+	
+	Com la aplicació \\
+	$$\begin{array}{rcl}
+		\phi_{p} :E	& \longrightarrow	& A 		\\
+		\vv{u}		& \longmapsto		& \phi_{p}(\vv{u})=p+\vv{u}	\\
+	\end{array}$$
+	és bijectiva. \\
+	$\forall q\in A, \exists !\vv{u}\in E$ tal que $\phi_{p}=p+\vv{u}=q$, com $\vv{e_{1}},\vv{e_{2}},...,\vv{e_{n}}$ és base de $E$
+	$$\vv{u}=\lambda_{1}\vv{e_1}+...+\lambda_{n}\vv{e_{n}}$$
+	i així
+	$$q=p+\lambda_{1}\vv{e_{1}}+...+\lambda_{1}\vv{e_{n}}$$ 
+	Anomenem les coordenades del punt $q$ en la referència $\mathcal{R}$ a $(\lambda_{1},\lambda_{2},...,\lambda_{n})$. Per tant les coordenades de q són els components del vector $\vv{pq}$ en la base $\vv{e_{1}},\vv{e_{2}},...,\vv{e_{n}}$ de $E$.
+\end{defn}
+
+\subsection{Equacions paramètriques de una varietat lineal}
+\label{ss_eqimvl}
+
+\begin{defn}
+	Sigui $A$ un espai afí de espai director $E$, $\mathcal{R}=\{ P;\vv{e_{1}},...,\vv{e_{n}}\}$ una referència, $\mathbb{L}=a+F$ una subvarietat lineal de $A$ i el conjunt de vectors $\{\vv{v_{1}},...,\vv{v_{r}}\}$ una base de $F$. En la referencia $\mathcal{R}$ el punt de pas de $\mathbb{L}$ s'expressarà:
+	$$a=P+\sum_{i=1}^{n}a_{i}\vv{e_{i}}$$
+	Per tant les coordenades de $a$ en la referència $\mathcal{R}$ seràn $(a_{1},...,a_{n})$. Ara expressem la base de $F$ en la de $E$ que hem utilitzat a la referència:
+	$$\vv{v_{j}}=\sum_{i=1}^{n}v_{j}^{i}\vv{e_{i}},\: j=1,...,r$$
+	Llavors, sigui $\vv{w}=\sum_{i=1}^{r}w^{i}\vv{v_{i}}\in F$, podem expressar un punt qualsevol $x\in\mathbb{L}$ com:
+	$$x=a+\vv{w}=P+\sum_{i=1}^{n}a_{i}\vv{e_{i}}+\sum_{j=0}^{r}w^{j}\vv{v_{j}}=P+\sum_{i=1}^{n}a_{i}\vv{e_{i}}+\sum_{j=0}^{r}w^{j}(\sum_{k=0}^{n}v_{j}^{k}\vv{e_{k}})=P+\sum_{i=0}^{n}(a_{i}+\sum_{j=0}^{r}w^{j}v_{j}^{i})\vv{e_{i}}$$
+	Per tant, si anomenem $(x_{1},...,x_{n})$ a les coordenades de $x$ en la referència $\mathcal{R}$, tenim:
+	$$\begin{array}{rcl}
+		x_{1}	& =		& a_{1}+w^{1}v_{1}^{1}+w^{2}v_{2}^{1}+...+w^{r}v_{r}^{1}	\\
+		x_{2}	& =		& a_{1}+w^{1}v_{1}^{2}+w^{2}v_{2}^{2}+...+w^{r}v_{r}^{2}	\\
+			& \vdots	&								\\
+		x_{n}	& =		& a_{n}+w^{1}v_{1}^{n}+w^{2}v_{2}^{n}+...+w^{r}v_{r}^{n}	\\
+	\end{array}$$
+	Les equacions formades per les coordenades de $x$ a partir de les coordenades de $a$, $w$ i la base de $F$ en la referència $\mathcal{R}$ les anomenem equacions paramètriques de $\mathbb{L}$.
+\end{defn}
+\begin{exmp}
+	Sigui $\mathbb{L}=a+F$ una recta en $\mathbb{R}^{5}$, en la referència $\mathcal{R}$, $a=(1,3,5,2,8)$, $F=<(3,2,0,6,9)>$, les coordenades d'un punt $x=(x_{1},x_{2},x_{3},x_{4},x_{5})\in\mathbb{L}$ vindràn expressades per les equacions:
+	$$\left.\begin{array}{rcl}
+		x_{1}	& =	& 1+3\vv{w}	\\
+		x_{2}	& =	& 3+2\vv{w}	\\
+		x_{3}	& =	& 5+0\vv{w}	\\
+		x_{4}	& =	& 2+6\vv{w}	\\
+		x_{5}	& =	& 8+9\vv{w}	\\
+	\end{array}\right\}\Longleftrightarrow \mathbb{L}=(1,3,5,2,8)+<(3,2,0,6,9)>$$
+\end{exmp}
+
+\subsection{Equacions implícites de una varietat lineal}
+\label{ss_eqimvl}
+
+\begin{defn}
+	
+\end{defn}
+
+\subsection{Combinacions lineals de punts}
+\label{ss_comlip}
+
+\begin{lem}
+	$\sum\limits_{i=0}^{k}\lambda_{i}\vv{p q_{i}}=\left(\sum\limits_{i=0}^{k}\lambda_{i}\right)\vv{pr}+\sum\limits_{i=0}^{k}\lambda_{i}\vv{r q_{i}}$
+\end{lem}
+\begin{proof}
+	$$\vv{pq}=\vv{pr}+\vv{rq}$$
+	$$\vv{p q_{i}}=\vv{pr}+\vv{r q_{i}}$$
+	$$\lambda_{i}\vv{p q_{i}}=\lambda_{i}\vv{pr}+\lambda_{i}\vv{r q_{i}}$$
+	$$\sum_{i=0}^{k}\lambda_{i}\vv{p q_{i}}=\left(\sum_{i=0}^{k}\lambda_{i}\right)\vv{pr}+\sum_{i=0}^{k}\lambda_{i}\vv{r q_{i}}$$
+\end{proof}
+
+\begin{cor}
+	Si $\sum\limits_{i=0}^k\lambda_{i}=0$, $\sum\limits_{i=0}^k\lambda_i\vv{pq_i}=\sum\limits_{i=0}^k\lambda_i\vv{rq_i}$, 
+	definim $\sum\limits_{i=0}^k\lambda_iq_i=\sum\limits_{i=0}^k\lambda_i\vv{pq_i}$ si $\sum\limits_{i=0}^k\lambda_{i}=0$.\\
+	Si $\sum\limits_{i=o}^k\lambda_i=1$, $\sum\limits_{i=0}^k\lambda_i\vv{pq_i}=\vv{pr}+\sum\limits_{i=0}^k\lambda_i\vv{rq_i}$, i per tant $p+\sum\limits_{i=0}^k\lambda_i\vv{pq_i}=r+\sum\limits_{i=0}^k\lambda_i\vv{rq_i}$,\\
+	definim $\sum\limits_{i=0}^k\lambda_iq_i=p+\sum\limits_{i=0}^k\lambda_i\vv{pq_i}$ si $\sum\limits_{i=0}^k\lambda_{i}=1$.
+\end{cor}
+
+$\lambda_i\in K$ i $\sum\limits_{i=0}^k\lambda_i=x$, si $\left\{\begin{array}{ll}
+x=0			& \text{llavors }\sum\lambda_ip_i\text{ és un vector.}				\\
+x=1			& \text{llavors }\sum\lambda_ip_i\text{ és un punt.}				\\
+x\neq 0\wedge x\neq 1	& \text{llavors }\frac{1}{\sum\lambda_i}\sum\lambda_ip_i\text{ és un punt.}	\\
+\end{array}\right.$
+
+\begin{exmp}(Baricentre de $m$ punts de $A$)\\
+	Siguin $p_1,p_2,\dotsc ,p_m\in A$, es defineix el baricentre d'aquests punts per
+	$$b=bar(p_1,\dotsc ,p_m))=\frac{1}{m}p_1+\dotsb +\frac{1}{m}p_m=\frac{p_1+\dotsb +p_m}{m}$$
+	$$\sum\limits_{i=0}^m\frac{1}{m}=\frac{m}{m}=1\Rightarrow b\text{ és un punt de }A.$$
+\end{exmp}
+\begin{exmp}("Centre de masses" d'un sistema amb $k$ punts de $A$)\\
+	Siguin $p_1,p_2,\dotsc ,p_k\in A$, i $m_1,\dotsc ,m_k\in K$, considerem els punts $p_i$ amb "masses" $m_i$ respectivament, llavors definim el "centre de masses" com el punt b tal que
+	$$b=\frac{1}{\sum m_i}(\sum m_ip_i),\hspace{3em}\sum\frac{m_i}{\sum m_i}=1 \Leftrightarrow \sum m_i \neq 0$$
+	$$\sum m_ip_i=(\sum m_i)b$$ 
+\end{exmp}
+
+\subsection{Independència afí}
+\label{ss_indafi}
+
+\begin{defn}
+	Siguin $p_1,\dotsc ,p_m\in A$, diem que aquests punts son afinment independents si
+	$$\sum\limits_{i=0}^m\lambda_i=0, \sum\limits_{i=0}^m\lambda_ip_i=0\Rightarrow\lambda_i=0,\:\forall i=1,\dotsc ,m$$
+	I són afinment dependents en el cas contrari.
+\end{defn}
+
+\begin{lem}
+	Les següents proposicions són equivalents:
+	\begin{enumerate}
+		\item $\sum\limits_{i=0}^m\lambda_i=0, \sum\limits_{i=0}^m\lambda_ip_i=0\Rightarrow\lambda_i=0,\:\forall i=1,\dotsc ,m$
+		\item Si $\sum\limits_{i=0}^m\lambda_i=1,\:\sum\limits_{i=0}^m\mu_i=1$, i $\sum\limits_{i=0}^m\lambda_ip_i=\sum\limits_{i=0}^m\mu_ip_i\Rightarrow \lambda_i=\mu_i,\:\forall i$
+		\item Si $\sum\limits_{i=2}^m\lambda_i\vv{p_1p_i}=0\Rightarrow \lambda_i=0,\:\forall i=2,\dotsc ,m$
+	\end{enumerate}
+\end{lem}
+\begin{proof}
+	$(1)\implies (2)$ \\
+	$$\sum\lambda_ip_i=\sum\mu_ip_i,\:\sum\lambda_i=\sum\mu_i\implies \sum(\lambda_i-\mu_i)p_i=0,\:\sum(\lambda_i-\mu_i)=0$$
+	$$\overset{(1)}{\implies}\lambda_i-\mu_i=0\implies\lambda_i=\mu_i$$
+	$(2)\implies (1)$ \\
+	Suposem
+	$$\sum\lambda_ip_i=0\text{, amb }\sum\lambda_i=0$$
+	Agafem un q diferent dels $p_i$
+	$$\sum\lambda_ip_i+q=q,\:\sum\lambda_i+1=1\overset{(2)}{\implies}\lambda_i=0$$
+\end{proof}
+
+\begin{cor}
+	Si $dim(A)=n$, el major nombre de punts afinment independents entre ells és $n+1$
+\end{cor}
+
+\begin{defn}
+	Sigui $A$ un conjunt de $n+1$ punts afinment independents en $A^n$, s'anomena referència afí(o sistema de coordenades o coordenades baricèntriques).
+\end{defn}
+
+\begin{prop}
+	Si ${p_0,\dotsc ,p_n}$ és una referència afí de $A$ y $q$ és qualsevol altre punt, llavors
+	$$q=\sum\limits_{i=0}^n\lambda_ip_i\text{, amb }\sum\lambda_i=1$$
+	i a més els $\lambda_i$ són únics. 
+\end{prop}
+\begin{proof}
+	Considerem:
+	$$\vv{p_0q}=\sum\limits_{i=0}^n\lambda_i\vv{p_0p_i},\:\lambda_i\in K$$
+	llavors ${p_0,\dotsc ,p_n}$ és base de $E$, així:
+	$$q-p_0=\sum\limits\lambda_i\vv{p_0p_i}=\sum\limits_{i=0}^n\lambda_i(p_i-p_0)$$
+	$$q=(p_0-\sum\limits\lambda_ip_0)+\sum\limits\lambda_ip_i=(1-\sum\limits\lambda_i)p_0+\sum\limits\lambda_ip_i$$
+\end{proof}
+
+\begin{defn}
+	Fixada la referència ${p_0,\dotsc ,p_n}$ de $A$, s'anomenen coordenades afins o baricèntriques de $q\in A$ als escalars $(\lambda_0, \dotsc ,\lambda_n)$ tals que:
+	$$q=\sum_{i=0}^n\lambda_ip_i$$
+\end{defn}
+\begin{exmp}
+	Siguin ${p_0,\dotsc ,p_n}$ punts afinment independent de $A$, el baricentre b té coordenades baricèntriques:
+	$$b=(\frac{1}{n+1},\dotsc ,\frac{1}{n+1})$$
+\end{exmp}
+
+\begin{prop}
+	Sigui $\mathbb{L}\subset A$ un subvarietat lineal, amb $dim(A)=n$ i $dim(\mathbb{L})=1$, per tant $\mathbb{L}$ és una recta. Siguin $P,Q\in\mathbb{L}$, amb $P\neq Q$, $(P,Q)$ és una referència afí de $\mathbb{L}$. \\
+	A més, donat un altre punt $X\in A$ 
+	$$X=\lambda P+(1-\lambda)Q\iff\vv{PX},\vv{PQ}\text{ són l.d.}$$
+\end{prop}
+\begin{exmp}
+	Si $dim(A)=2$ i $\mathcal{R}$ és una referència cartesiana i $P=(p_1,p_2),\: Q=(q_1,q_2),\: X=(x_1,x_2)$ punts de $A$, sabem que:
+	\[rang\left(\begin{array}{cc}
+		x_1-p_1 & q_1-p_1 \\
+		x_2-p_2 & q_2-p_2 \\
+	\end{array}\right)=1\iff\left|\begin{array}{cc}
+		x_1-p_1 & q_1-p_1 \\
+		x_2-p_2 & q_2-p_2 \\
+	\end{array}\right|=0\]
+	\[\iff\left|\begin{array}{ccc}
+		1   & 1   & 1   \\
+		p_1 & x_1 & q_1 \\
+		p_2 & x_2 & q_2 \\
+	\end{array}\right|=0\iff\left|\begin{array}{ccc}
+		p_0 & x_0 & q_0 \\
+		p_1 & x_1 & q_1 \\
+		p_2 & x_2 & q_2 \\
+	\end{array}\right|=0\]
+	si $p_0,p_1,p_2$ són les coordenades baricèntriques de P, i així respectivament pels tres punts.
+\end{exmp}
+
+\begin{defn}
+	Siguin $a,b,c\in A$ 3 punts alineats amb $b\neq c$ i $\lambda\in K$, definim la raó simple com $(a,b,c):=\lambda$ tal que
+	$$\vv{ac}=(a,b,c)\vv{bc}\iff\vv{ac}=\lambda\vv{bc}$$
+\end{defn}
+
+\begin{prop}
+	Siguin $a,b,c\in A$ 3 punts alineats amb $b\neq c$ i raó simple $\lambda =(a,b,c)\in K$, podem expressar $a$ com:
+	$$a=(a,b,c)b+(1-(a,b,c))c$$
+\end{prop}
+\begin{proof}
+	Com $b$ i $c$ formen una referència afí de la recta que els uneix, podem expressar $a$ com
+	\[a=\lambda b+(1-\lambda)c\]
+	$$\begin{array}{rcl}
+		\vv{ac} & = & c-a=c-(\lambda b+(1-\lambda )c)                      \\
+		        & = & (\lambda c +(1-\lambda )c)-(\lambda b+(1-\lambda )c) \\
+		        & = & \lambda (c-b)                                        \\
+		        & = & \lambda \vv{bc}                                      \\
+	\end{array}$$
+	Per tant $\lambda =(a,b,c)$, i així:
+	$$a=(a,b,c)b+(1-(a,b,c))c$$	
+\end{proof}
+
+\begin{prop}
+	Sigui $A,B,C\in A$, $dim(A)=n$, i $A=(a_1,\dotsc ,a_n),B=(b_1,\dotsc ,b_n),C=(c_1,\dotsc ,c_n)$ les coordenades dels punts en un sistema de coordenades, la raó simple serà: \\
+	\[(A,B,C)=\lambda =\frac{c_1-a_1}{c_1-b_1}=\dotsb =\frac{c_n-a_n}{c_n-b_n}\]
+\end{prop}
+\begin{proof}
+	$(A,B,C)=\lambda\implies\vv{AC}=\lambda\vv{BC}$ \\
+	\[\implies (c_1-a_1,\dotsc ,c_n-a_n)=\lambda (c_1-b_1,\dotsc ,c_n-b_n)\implies\lambda=\frac{c_1-a_1}{c_1-b_1}=\dotsb =\frac{c_n-a_n}{c_n-b_n}\]
+\end{proof}
+
+\subsection{Operacions amb subvarietats}
+\label{ss_opsvar}
+
+\begin{defn}(Intersecció de subvarietats lineals)
+	Sigui $A$ un espai afí de espai director $E$, i $\mathbb{L}_1,\mathbb{L}_2\in A$ dos subvarietats lineals que podem expressar com $\mathbb{L}_1=p_1+F_1$ i $\mathbb{L}_2=p_2+F_2$, amb $p_1\in\mathbb{L}_1,\: p_2\in\mathbb{L}_2$ i $F_1,F_2\subseteq E$. Definirem la intersecció de dos subvarietats lineals com la subvarietat lineal més gran que conté nomès punts de les dues, i la denotarem per $\mathbb{L}_1\cap\mathbb{L}_2$ o $\mathbb{L}_1\land\mathbb{L}_2$.
+\end{defn}
+
+\begin{prop}
+	Sigui $A$ un espai afí de espai director $E$, $\mathbb{L}_1,\mathbb{L}_2\in A$ dos subvarietats lineals de espais directors $F_1,F_2\in E$ respectivament, i $\mathbb{L}_1\cap\mathbb{L}_2\neq\varnothing$, $\mathbb{L}_1\cap\mathbb{L}_2$ és una subvarietat lineal de $A$ de espai director $F_1\cap F_2$.
+\end{prop}
+\begin{proof}
+	\[\mathbb{L}_1\cap\mathbb{L}_2\neq\varnothing\implies\exists c\in A: c\in\mathbb{L}_1\land c\in\mathbb{L}_2\implies\left\{\begin{array}{rcl}
+		\mathbb{L}_1 & = & c+F_1 \\
+		\mathbb{L}_2 & = & c+F_2 \\
+	\end{array}\right.\implies\mathbb{L}_1\cap\mathbb{L}_2=(c+F_1)\cap (c+F_2)\]
+	\[ u_1\in F_1, u_2\in F_2, p\in \mathbb{L}_1\cap\mathbb{L}_2: \left\{\begin{array}{rcl}
+		p & = & c+u_1 \\
+		p & = & c+u_2 \\
+	\end{array}\right\}\iff\mathbb{L}_1\cap\mathbb{L}_2=c+F_1\cap F_2\]
+\end{proof}
+
+\begin{prop}
+	$\mathbb{L}_1\cap\mathbb{L}_2\neq\varnothing\iff\vv{p_1p_2}\in(F_1+F_2)$
+\end{prop}
+\begin{proof}
+	$\implies )\hspace{2em}\mathbb{L}_1\cap\mathbb{L}_2\neq\varnothing\implies\exists c\in\mathbb{L}_1\cap\mathbb{L}_2\implies$
+	\[\implies\left\{\begin{array}{rcll}
+		c & = & p_1+u_1, & u_1\in F_1 \\
+		c & = & p_2+u_2, & u_2\in F_2 \\
+	\end{array}\right\}\implies p_1+u_1=p_2+u_2\implies u_1-u_2=p_2-p_1\]
+	\[\left.\begin{array}{c}
+		u_1-u_2\in F_1\cap F_2 \\
+		u_1-u_2=p_2-p_1        \\
+		p_2-p_1=\vv{p_1p_2}    \\
+	\end{array}\right\}\implies\vv{p_1p_2}\in (F_1+F_2)\] \\
+	$\impliedby )\hspace{2em}\vv{p_1p_2}\in (F_1+F_2)\implies\vv{p_1p_2}=p_2-p_1=u_1-u_2\implies p_2+u_2=p_1+u_1=c$
+	\[\left.\begin{array}{r}
+		p_1+u_1\in F_1    \\
+		p_2+u_2\in F_2    \\
+		p_2+u_2=p_1+u_1=c \\
+	\end{array}\right\}\implies c\in\mathbb{L}_1\cap\mathbb{L}\implies\mathbb{L}_1\cap\mathbb{L}\neq\varnothing\]
+\end{proof}
+
+\begin{defn}(Paral·lelisme entre varietats lineals)
+	Diem que dues subvarietats lineals tenen una relació de paral·lelisme, i per tant són paral·leles, si
+	\[\mathbb{L}_1\parallel\mathbb{L}_2\iff (F_1\subseteq F_2)\lor (F_2\subseteq F_1)\]
+\end{defn}
+
+\begin{prop}
+	La relació de paral·lelisme és de tipus:
+	\begin{enumerate}
+		\item Reflexiva: $\forall\mathbb{L}_1[\mathbb{L}_1\parallel\mathbb{L}_1]$
+		\item Simètrica: $\forall\mathbb{L}_1,\forall\mathbb{L}_2 [\mathbb{L}_1\parallel\mathbb{L}_2\implies\mathbb{L}_2\parallel\mathbb{L}_1]$
+	\end{enumerate}
+	En canvi, no és transitiva, i per tant no és relació de equivalència.
+\end{prop}
+\begin{proof}\begin{enumerate}
+	\item Reflexiva: $\mathbb{L}_1\parallel\mathbb{L}_1\iff (F_1\subseteq F_1)\lor (F_1\subseteq F_1)$
+	\item Simètrica: $\mathbb{L}_1\parallel\mathbb{L}_2\iff (F_1\subseteq F_2)\lor (F_2\subseteq F_1)\implies\mathbb{L}_2\parallel\mathbb{L}_1$
+	\end{enumerate}
+	Contraxemple de transitivitat: $\mathbb{L}_1\parallel\mathbb{L}_2,\mathbb{L}_2\parallel\mathbb{L}_3\iff ((F_1\subseteq F_2)\lor (F_2\subseteq F_1))\land((F_2\subseteq F_3)\lor (F_3\subseteq F_2))$
+	Si $F_2\subseteq F_3$ i $F_2\subseteq F_1\implies\mathbb{L}_1\parallel\mathbb{L}_2\land\mathbb{L}_2\parallel\mathbb{L}_3$ però $\mathbb{L}_1\nparallel\mathbb{L}_3$ ja que $(F_1\nsubseteq F_3)\lor (F_3\nsubseteq F_1)$.
+\end{proof}
+
+\begin{defn}(Suma de subvarietats lineals)
+	Definim la suma de dos subvarietats lineals $\mathbb{L}_1$ i $\mathbb{L}_2$, com la subvarietat lineal més petita que les conté, i la denotem per $\mathbb{L}_1+\mathbb{L}_2$ o $\mathbb{L}_1\lor\mathbb{L}_2$.
+\end{defn}
+
+\begin{prop}
+	$\mathbb{L}_1+\mathbb{L}_2=p_1+<\vv{p_1p_2}>+F_1+F_2$
+\end{prop}
+\begin{proof}
+	Per definició, $p_1+<\vv{p_1p_2}>+F_1+F_2$ és una subvarietat lineal i conté $\mathbb{L}_1$ i $\mathbb{L}_2$:\\
+	$\mathbb{L}_1=p_1+F_1\subseteq p_1+(<\vv{p_1p_2}>+F_1+F_2)$\\
+	$\mathbb{L}_2=p_2+F_2\subseteq p_2+(<\vv{p_1p_2}>+F_1+F_2)$\\
+	Falta comprovar que $p_1+<\vv{p_1p_2}>+F_1+F_2$ és la més petita que les conté:\\
+	Definim un subvarietat lineal $\mathbb{M}=p_1+H=p_2+H$ tal que $\mathbb{L}_1,\mathbb{L}_2\subseteq\mathbb{M}$\\
+	\[\left.\begin{array}{r}
+		\mathbb{L}_1=p_1+F_1\subseteq p_1+H\implies F_1\subseteq H                    \\
+		\mathbb{L}_2=p_2+F_2\subseteq p_2+H\implies F_2\subseteq H                    \\
+		p_1,p_2\in\mathbb{M}\implies\vv{p_1p_2}\in H\implies <\vv{p_1p_2}>\subseteq H \\
+	\end{array}\right\}\implies <\vv{p_1p_2}>+F_1+F_2\subseteq H\]
+	\[\implies p_1+(<\vv{p_1p_2}>+F_1+F_2)\subseteq p_1+H=\mathbb{M}\]
+	Per tant, $p_1+<\vv{p_1p_2}>+F_1+F_2$ conté qualsevol subvarietat lineal que contingui $\mathbb{L}_1$ i $\mathbb{L}_2$, i per definició és la suma de $\mathbb{L}_1$ i $\mathbb{L}_2$.
+\end{proof}
+
+\begin{exmp}
+	$dim(A)=1,\mathbb{L}_1=\{p_1\},\mathbb{L}_2=\{p_2\}$, amb $p_1\neq p_2$ \\
+	$\mathbb{L}_1\cap\mathbb{L}_2=\varnothing$ \\
+	$\mathbb{L}_1+\mathbb{L}_2=\{p_1\}+\{p_2\}="p_1+p_2"=\{p_1\}\lor \{p_2\}=p_1\lor p_2=p_1+<\vv{p_1p_2}>=A$
+\end{exmp}
+\begin{exmp}
+	$dim(A)=2,\mathbb{L}_1=\{p_1\},\mathbb{L}_2=p_2+<u>$, amb $\vv{p_1p_2}\neq\lambda u$ \\
+	$\mathbb{L}_1\cap\mathbb{L}_2=\varnothing$ \\
+	$\mathbb{L}_1+\mathbb{L}_2=p_1+<\vv{p_1p_2}>+<u>=A$
+\end{exmp}
+
+\subsection{Fòrmules de Grassman afins}
+\label{ss_frgrss}
+
+\begin{thm}\begin{enumerate}[label=\emph{\alph*})]
+	\item Si $\mathbb{L}_1\cap\mathbb{L}_2\neq\varnothing$, llavors 
+	\[dim(\mathbb{L}_1+\mathbb{L}_2)=dim(\mathbb{L}_1)+dim(\mathbb{L}_2)-dim(\mathbb{L}_1\cap\mathbb{L}_2)\]
+	\item Si $\mathbb{L}_1\cap\mathbb{L}_2=\varnothing$, llavors
+	\[dim(\mathbb{L}_1+\mathbb{L}_2)=dim(\mathbb{L}_1)+dim(\mathbb{L}_2)+1-dim(F_1\cap F_2)\]
+\end{enumerate}\end{thm}
+\begin{proof}
+	$dim(\mathbb{L}_1+\mathbb{L}_2)=dim(p_1+<\vv{p_1p_2}>+F_1+F_2)=dim(<\vv{p_1p_2}>+F_1+F_2)=(\ast )$ \\
+	\begin{enumerate}[label=\emph{\alph*})]
+	\item $\mathbb{L}_1\cap\mathbb{L}_2\neq\varnothing\implies\vv{P_1p_2}\in F_1+F_2$ \\
+	$(\ast )=dim(F_1+F_2)=dim(F_1)+dim(F_2)-dim(F_1\cap F_2)=dim(\mathbb{L}_1)+dim(\mathbb{L}_2)-dim(\mathbb{L}_1\cap\mathbb{L}_2)$
+	\item $\mathbb{L}_1\cap\mathbb{L}_2=\varnothing\implies\vv{p_1p_2}\notin F_1+F_2$ \\
+	$(\ast )=1+dim(F_1+F_2)=1+dim(F_1)+dim(F_2)-dim(F_1\cap F_2)$
+\end{enumerate}\end{proof}
+
+\begin{exmp}(Posició relativa d'un hiperpla i una recta a $A^n$)
+	Siguin $\mathbb{L}_1$ un hiperpla i $\mathbb{L}_2$ una recta, per tant $dim(\mathbb{L}_1)=n-1$ i $dim(\mathbb{L}_2)=1$, i podem diferenciar dos casos:
+	\begin{itemize}
+		\item $\mathbb{L}_1\cap\mathbb{L}_2\neq\varnothing\implies\mathbb{L}_1\cap\mathbb{L}_2\subseteq\mathbb{L}_2\left\{\begin{array}{l}
+			dim(\mathbb{L}_1\cap\mathbb{L}_2)=0\implies\mathbb{L}_1\cap\mathbb{L}_2=\{p\} \\
+			dim(\mathbb{L}_1\cap\mathbb{L}_2)=1\implies\mathbb{L}_2\subseteq\mathbb{L}_1  \\
+		\end{array}\right.$
+		\item $\mathbb{L}_1\cap\mathbb{L}_2=\varnothing\implies dim(\mathbb{L}_1+\mathbb{L}_2)=n-1+1+1-dim(F_1\cap F_2)=n+1-dim(F_1\cap F_2)$ \\
+		\[\left.\begin{array}{r}
+			dim(\mathbb{L}_1+\mathbb{L}_2)=n+1-dim(F_1\cap F_2) \\
+			dim(\mathbb{L}_2)=1\implies dim(F_2)=1 \\
+			\mathbb{L}_1+\mathbb{L}_2\subseteq A\implies dim(\mathbb{L}_1+\mathbb{L}_2)\leq n \\
+		\end{array}\right\}\implies dim(F_1\cap F_2)=1\implies F_2=F_1\cap F_2\] \\
+		$\implies F_2\subseteq F_1\implies \mathbb{L}_1\parallel\mathbb{L}_2$
+	\end{itemize}
+\end{exmp}
+
+\subsection{Teoremes clàssics}
+\label{ss_teocla}
+
+\begin{thm}[de Tales]
+	Siguin $r,s$ dos rectes en un pla afí i $l_1,l_2,l_3$ 3 rectes paral·leles i que tallen a $r$ en $p_1,p_2,p_3$, i a $s$ en $q_1,q_2,q_3$, respectivament; llavors $(p_1,p_2,p_3)=(q_1,q_2,q_3)$.
+\end{thm}
+\begin{proof}
+	Suposant $p_1\neq q_1$, definim la referència $\mathcal{R}=\{p_1,\vv{p_1p_2},\vv{p_1q_1}\}$, i expressem els punts $p_i$ i $q_i$ en aquesta referència: \\
+	\[\begin{array}{ll}
+		p_1=(0,0) & q_1=(0,1)\\
+		p_2=(1,0) & q_2=p_1+\vv{p_1p_2}+\vv{p_2q_2}=p_1+\vv{p_1p_2}+b\vv{p_1q_1}=(1,b) \\
+		p_3=(a,0) & q_3=p_1+\vv{p_1p_3}+\vv{p_3q_3}=p_1+a\vv{p_1p_2}+c\vv{p_1q_1}=(a,c)\\
+	\end{array}\]
+	\[\left.\begin{array}{l}
+		(p_1,p_2,p_3)=\frac{a-0}{a-1}=\frac{0-0}{0-0} \\
+		(q_1,q_2,q_3)=\frac{a-0}{a-1}=\frac{c-1}{c-b} \\
+	\end{array}\right\}\implies (p_1,p_2,p_3)=(q_1,q_2,q_3)\]
+\end{proof}
+
+\begin{thm}[de Menelao]
+	Siguin 
+\end{thm}
+\begin{proof}
+	
+\end{proof}
+
+\begin{thm}[]
+	
+\end{thm}
+\begin{proof}
+	
+\end{proof}
