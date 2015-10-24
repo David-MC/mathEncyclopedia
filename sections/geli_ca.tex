@@ -411,7 +411,7 @@ x\neq 0\wedge x\neq 1	& \text{llavors }\frac{1}{\sum\lambda_i}\sum\lambda_ip_i\t
 \begin{proof}
 	$dim(\mathbb{L}_1+\mathbb{L}_2)=dim(p_1+<\vv{p_1p_2}>+F_1+F_2)=dim(<\vv{p_1p_2}>+F_1+F_2)=(\ast )$ \\
 	\begin{enumerate}[label=\emph{\alph*})]
-	\item $\mathbb{L}_1\cap\mathbb{L}_2\neq\varnothing\implies\vv{P_1p_2}\in F_1+F_2$ \\
+	\item $\mathbb{L}_1\cap\mathbb{L}_2\neq\varnothing\implies\vv{p_1p_2}\in F_1+F_2$ \\
 	$(\ast )=dim(F_1+F_2)=dim(F_1)+dim(F_2)-dim(F_1\cap F_2)=dim(\mathbb{L}_1)+dim(\mathbb{L}_2)-dim(\mathbb{L}_1\cap\mathbb{L}_2)$
 	\item $\mathbb{L}_1\cap\mathbb{L}_2=\varnothing\implies\vv{p_1p_2}\notin F_1+F_2$ \\
 	$(\ast )=1+dim(F_1+F_2)=1+dim(F_1)+dim(F_2)-dim(F_1\cap F_2)$
@@ -454,15 +454,671 @@ x\neq 0\wedge x\neq 1	& \text{llavors }\frac{1}{\sum\lambda_i}\sum\lambda_ip_i\t
 \end{proof}
 
 \begin{thm}[de Menelao]
-	Siguin 
+	Siguin $A_1,A_2,A_3$ 3 punts afinment independents en un pla afí, i sigui $l$ una recta que talla amb els costats $a_1=\{A_2\}+\{A_3\},a_2=\{A_3\}+\{A_1\},a_3=\{A_1\}+\{A_2\}$ del triangle que formen $A_1,A_2,A_3$, en els punts $B_1,B_2,B_3$, respectivament; llavors
+	\[(A_1,A_2,B_3)(A_2,A_3,B_1)(A_3,A_1,B_2)=1\]
 \end{thm}
 \begin{proof}
-	
+	$\mathcal{R}=\{A_1,\vv{A_1A_2},\vv{A_1A_3}\}$ \\
+	\[\begin{array}{ll}
+		A_1=(0,0) & B_1=(x,y)=\lambda B_3+(1-\lambda )B_2=(\lambda a,(1-\lambda )b) \\
+		A_2=(1,0) & B_2=(0,b) \\
+		A_3=(0,1) & B_3=(a,0) \\
+	\end{array}\]
+	\[\left.\begin{array}{l}
+		x+y=1 \\
+		(x,y)=(\lambda a,(1-\lambda )b) \\
+	\end{array}\right\}\implies\lambda a+(1-\lambda )b\implies\lambda =\frac{1-b}{a-b}\text{, amb }a\neq b\]
+	\[B_1=\left(\frac{1-b}{a-b}a,\left(1-\frac{1-b}{a-b}\right)b\right)=\left(\frac{1-b}{a-b}a,\frac{a-b-1+b}{a-b}b\right)=\left(\frac{1-b}{a-b}a,\frac{a-1}{a-b}b\right)\] \\
+	$\displaystyle{(A_1,A_2,B_3)=\frac{a}{a-1}}$ \\
+	$\displaystyle{(A_2,A_3,B_1)=\frac{\frac{1-b}{a-b}a-1}{\frac{1-b}{a-b}a}=\frac{a-ab-a+b}{a-ab}=\frac{b(1-a)}{a(1-b)}}$ \\
+	$\displaystyle{(A_3,A_1,B_2)=\frac{b-1}{b}}$ \\
+	\[(A_1,A_2,B_3)(A_2,A_3,B_1)(A_3,A_1,B_2)=\left(\frac{a}{a-1}\right)\left(\frac{b(1-a)}{a(1-b)}\right)\left(\frac{b-1}{b}\right)=1\]
 \end{proof}
 
-\begin{thm}[]
-	
+\begin{thm}[de Ceva]
+	Siguin $A_1,A_2,A_3$ 3 punts afinment independents en un pla afí, i sigui $P$ un punt del pla
+	\[\begin{array}{l}
+		B_1=(\{A_2\}+\{A_1\})\cap (\{A_1\}+\{P\}) \\
+		B_2=(\{A_3\}+\{A_1\})\cap (\{A_2\}+\{P\}) \\
+		B_3=(\{A_1\}+\{A_2\})\cap (\{A_3\}+\{P\}) \\
+	\end{array}\]
+	Llavors
+	\[(A_1,A_2,B_3)(A_2,A_3,B_1)(A_3,A_1,B_2)=-1\]
 \end{thm}
 \begin{proof}
-	
+	$\mathcal{R}=\{A_1,\vv{A_1A_2},\vv{A_1A_3}\}$ \bigskip \\ 
+	$\begin{array}{rlrl}
+		P   & =(a,b)\hspace{2em} & & \\
+		A_1 & =(0,0)\hspace{2em} & B_1 & =(x,y)\text{, amb }x+y=1\implies B_1=(x,1-x) \\
+		A_2 & =(1,0)\hspace{2em} & B_2 & =(0,d) \\
+		A_3 & =(0,1)\hspace{2em} & B_3 & =(c,0) \\
+	\end{array}$ \bigskip  \\
+	$\displaystyle{\mu_1=(B_1,P,A_1)=\frac{\vv{B_1A_1}}{\vv{PA_1}}=\frac{x}{a}=\frac{x-1}{-b}\implies\frac{-b}{a}=\frac{x-1}{x}}$ \\
+	$\displaystyle{\mu_2=(B_2,P,A_2)=\frac{\vv{B_2A_2}}{\vv{PA_2}}=\frac{1}{1-a}=\frac{d}{b}\implies d=\frac{b}{1-a}}$ \\
+	$\displaystyle{\mu_3=(B_3,P,A_3)=\frac{\vv{B_3A_3}}{\vv{PA_3}}=\frac{1}{1-b}=\frac{c}{a}\implies c=\frac{a}{1-b}}$ \bigskip \\
+	$\displaystyle{\lambda_1=(A_1,A_2,B_3)=\frac{\vv{A_1B_3}}{\vv{A_2B_3}}=\frac{c}{c-1}=\frac{\left(\frac{a}{1-b}\right)}{\left(\frac{a}{1-b}\right)-1}=\frac{a}{a+b-1}}$ \\
+	$\displaystyle{\lambda_2=(A_2,A_3,B_1)=\frac{\vv{A_2B_1}}{\vv{A_3B_1}}=\frac{x-1}{x}=\frac{-b}{a}}$ \\
+	$\displaystyle{\lambda_3=(A_3,A_1,B_2)=\frac{\vv{A_3B_2}}{\vv{A_1B_2}}=\frac{d-1}{d}=\frac{\left(\frac{b}{1-a}\right)-1}{\left(\frac{b}{1-a}\right)}=\frac{a+b-1}{b}}$ \bigskip \\
+	\[\lambda_1\lambda_2\lambda_3=\left(\frac{a}{a+b-1}\right)\left(\frac{-b}{a}\right)\left(\frac{a+b-1}{b}\right)\]
 \end{proof}
+
+\subsection{Aplicacions afins}
+\label{ss_aplafi}
+
+Siguin $\mathbb{A},\mathbb{A}_1,\dotsc ,\mathbb{A}_n$ espais afins de espai director $E,E_1,\dotsc ,E_n$ respectivament
+
+\begin{defn}
+	Una aplicació afí $f:\mathbb{A}_1\to\mathbb{A}_2$ és una aplicació de conjunts tal que $\exists$ una aplicació lineal
+	\[\widetilde{f}:E_1\to E_2\]
+	que verifica
+	\[\forall p\in\mathbb{A}_1,\forall\vv{u}\in E_1[f(p+\vv{u})=f(p)+\widetilde{f}(\vv{u})]\]
+\end{defn}
+
+\begin{prop}
+	$\exists\widetilde{f}:f(p+\vv{u})=f(p)+\widetilde{f}(\vv{u})\implies\widetilde{f}$ és única, i en efecte
+	\[\forall\vv{u}\in E_1[\widetilde{f}=f(p+\vv{u})-f(p)]\]
+	i així $\widetilde{f}$ queda determinada per $f$, i l'anomenem l'aplicació lineal associada a $f$.
+\end{prop}
+
+Altres formes d'expressar-ho: \\
+Si $q=p+\vv{u}=p+\vv{pq}, \left.\begin{array}{rl}
+	f(q)= & f(p+u)=f(p)+\widetilde{f}(\vv{pq}) \\
+	f(q)= & f(p)+\vv{f(p)f(q)} \\
+\end{array}\right\}\implies\widetilde{f}(\vv{pq})=\vv{f(p)f(q)}$ \bigskip \\
+Usant els axiomes dels espais afins: \\
+Sabem que $\forall p\in\mathbb{A}_1$, la aplicació
+\[\begin{array}{rcl}
+	\phi_{p} :E_1	& \to	& \mathbb{A}_1 	\\
+	\vv{v}		& \mapsto		& q+\vv{v}	\\
+\end{array}\]
+és bijectiva. \\
+\[\forall\vv{u}\in E_1[f(\phi_{p}(\vv{u}))=\phi_{f(p)}(\widetilde{f}(\vv{u}))\implies (f\circ\phi_{p})(\vv{u})=(\phi_{f(p)}\circ\widetilde{f})(\vv{u})]\] \\
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+  {
+     E_1 & \mathbb{A}_1 \\
+     E_2 & \mathbb{A}_2 \\};
+  \path[-stealth]
+    (m-1-1) edge node [left] {$\widetilde{f}$} (m-2-1)
+            edge node [above] {$\phi_p$} (m-1-2)
+    (m-2-1.east|-m-2-2) edge node [below] {$\phi_{f(p)}$}
+            node [above] {} (m-2-2)
+    (m-1-2) edge node [right] {$f$} (m-2-2);
+\end{tikzpicture} \\
+$f\circ\phi_p=\phi_{f(p)}\circ\widetilde{f}$
+\begin{cor}
+	$f=\phi_{f(p)}\circ\widetilde{f}\circ\phi_p^{-1}$ \\
+	$\widetilde{f}=\phi_{f(p)}^{-1}\circ f\circ\phi_p$ \\
+	i així:
+	\[\begin{array}{lcl}
+		f\text{ bijectiva} & \iff & \widetilde{f}\text{ bijectiva} \\
+		f\text{ injectiva} & \iff & \widetilde{f}\text{ injectiva} \\
+		f\text{ exhaustiva} & \iff & \widetilde{f}\text{ exhaustiva} \\
+	\end{array}\]
+	i per tant, $f$ determina $\widetilde{f}$, i $\widetilde{f}$ junt amb un punt $p$ i la seva imatge $f(p)$ determina $f$.
+\end{cor}
+
+\begin{exmp}
+	\[\begin{array}{rcl}
+		id:\mathbb{A}	& \to	& \mathbb{A} 	\\
+		p	& \mapsto		& id(p)=p	\\
+	\end{array}\] \\
+	$id(p+\vv{u})=p+\vv{u}=id(p)+\vv{u}\implies\widetilde{id}(\vv{u})=\vv{u}$ \\
+	Per tant la identitat de $\mathbb{A}$ és afí.
+\end{exmp}
+\begin{exmp}
+	Si $f$ i $g$ són afins, $g\circ f$ és afí i $\widetilde{g\circ f}=\widetilde{g}\circ\widetilde{f}$ \\
+	En efecte, $\mathbb{A}_1\mathop{\to}\limits^f\mathbb{A}_2\mathop{\to}\limits^g\mathbb{A}_3$ \\
+	\[(g\circ f)(p+\vv{u})=g(f(p+\vv{u}))=g(f(p)+\widetilde{f}(\vv{u}))=(g\circ f)(p)+(\widetilde{g}\circ \widetilde{f})(\vv{u})\implies \widetilde{g\circ f}=\widetilde{g}\circ\widetilde{f}\]
+\end{exmp}
+
+\begin{defn}
+	Sigui $w\in E$, $w\neq 0$, definim
+	\[\begin{array}{rcl}
+		z_{\vv{w}}:\mathbb{A} & \to & \mathbb{A} \\
+		p & \mapsto & p+\vv{w} \\
+	\end{array}\]
+\end{defn}
+
+\begin{prop}
+	$z_{\vv{w}}$ és una aplicació afí.
+\end{prop}
+\begin{proof}
+	$z_{\vv{w}}(p+\vv{u})=p+\vv{u}+\vv{w}=p+\vv{w}+\vv{u}=z_{\vv{w}}(p)+\vv{u}=z_{\vv{w}}(p)+id_E(\vv{u})\implies z_{\vv{w}}$ és afí i $\widetilde{z_{w}}=id_E$
+\end{proof}
+
+\begin{prop}
+	Si $f$ és afí i $\widetilde{f}=id$, llavors $f$ és una translació.
+\end{prop}
+\begin{proof}
+	En efecte, considerem un punt $p$, i la seva imatge $f(p)$. \\
+	Llavors $f(p)=p+\vv{w}\implies\vv{w}=\vv{pf(p)}$. \\
+	Si ara agafem un altre punt $q=p+\vv{pq}$ tindrem
+	\[f(q)=f(p)+\widetilde{f}(\vv{pq})=f(p)+\vv{pq}=p+\vv{w}+\vv{pq}=q+\vv{w}\implies\forall q,f=z_{\vv{w}}\]
+\end{proof}
+
+\begin{prop}
+	$f,g$ translacions $\implies g\circ f$ translació
+\end{prop}
+\begin{proof}
+	$\forall p[f(p)=p+\vv{w_1}],\forall p[g(p)=p+\vv{w_2}]$ \\
+	$(g\circ f)(p)=g(f(p))=g(p+\vv{w_1})=(p+\vv{w_1})+\vv{w_2}=p+(\vv{w_1}+\vv{w_2})\implies g\circ f$ és la translació de vector $\vv{w_1}+\vv{w_2}$
+\end{proof}
+
+\begin{prop}
+	Les translacions amb l'identitat i la composició d'aplicacions formen un grup.
+\end{prop}
+\begin{proof}
+	$(z_{-w}\circ z_w)(p)=p$\\
+	FALTA ACABAR
+\end{proof}
+
+\begin{defn}
+	Sigui $r\neq 0,1$ i sigui $O$,$p$ dos punt de $\mathbb{A}$. Definim l'homotècia de centre $O$ i raó $r$ com
+	\[\begin{array}{rccc}
+		f: & \mathbb{A} & \to &\mathbb{A} \\
+		& p=O+\vv{Op} & \mapsto & f(p)=O+r\vv{Op} \\
+	\end{array}\]
+	Si $r>1$ diem que $f$ és una dilatació. \\
+	Si $1>r>0$ diem que $f$ és una contracció \\
+	Si $r=-1$ diem que $f$ és una simetria central
+\end{defn}
+
+\begin{prop}
+	$f$ és una homotècia $\iff$ és una aplicació afí amb $\widetilde{f}=r\cdot id_E$.
+\end{prop}
+\begin{proof}
+	$\implies )\hspace{2em}f(p+\vv{u})=O+r\vv{O(p+\vv{u})}=O+r(\vv{Op}+\vv{u})=O+r\vv{Op}+r\vv{u}=f(p)+r\vv{u}\implies f$ és afí i $\widetilde{f}=r\cdot id_E$ \bigskip \\
+	$\impliedby )\hspace{2em}f$ és afí i $\widetilde{f}=r\cdot id_E\implies $FALTA ACABARLO
+\end{proof}
+
+\begin{prop}
+	El centre de la homotècia queda determinat per un punt $p$ i la seva imatge $f(p)$.
+\end{prop}
+\begin{proof}
+	\[f(p)=O+rp-rO=(1-r)O+rp\implies -rp+f(p)=(1-r)O\implies O=\frac{-r}{1-r}p+\frac{1}{1-r}f(p)\]
+\end{proof}
+
+\begin{prop}
+	El centre $O$ de una homotècia verifica $f(O)=O$, i per tant és un punt fix.
+\end{prop}
+\begin{proof}
+	\[O=\frac{-r}{1-r}p+\frac{1}{1-r}p-\frac{1}{1-r}p+\frac{1}{1-r}f(p)=p+\frac{1}{1-r}\vv{pf(p)}\]
+	\[f(O)=f(p)+\frac{r}{1-r}\vv{pf(p)}=\frac{1-r}{1-r}f(p)+\frac{r}{1-r}f(p)-\frac{r}{1-r}p=\frac{1}{1-r}f(p)-\frac{r}{1-r}p=O\]
+\end{proof}
+
+Donat un $p$ qualsevol, $p=O+\vv{Op}$, per tant $f(p)=f(O+\vv{Op})=f(O)+\widetilde{f}(\vv{Op})=O+r\vv{Op}$
+
+\begin{prop}
+	$f,g$ homotecies amb el mateix origen $O\implies g\circ f$ homotècia
+\end{prop}
+\begin{proof}
+	$f(p)=O+r\vv{Op},g(p)=O+s\vv{Op}$ \\
+	$(g\circ f)(p)=g(f(p))=g(O+r\vv{Op})=g(O)+sr\vv{Op}=O+sr\vv{Op}\implies g\circ f$ és una homotècia de centre $O$ i raó $rs$
+\end{proof}
+
+\begin{prop}
+	Les homotècies de mateix origen formen un grup amb l'identitat i la composició.
+\end{prop}
+\begin{proof}
+	FALTA ACABAR
+\end{proof}
+
+\begin{prop}
+	$f,g$ homotecies tals que $f(x)=P+r\vv{Px},g(x)=Q+s\vv{Qx}$ \\ 
+	\[\left\{\begin{array}{l}
+		rs=1\implies g\circ f\text{ és una translació de vector de translació} w=(s-1)\vv{QP} \\
+		rs\neq 1\implies g\circ f\text{ és una homotècia} \\
+	\end{array}\right.\]
+\end{prop}
+\begin{proof}
+	$f(x)=P+r\vv{Px},g(x)=Q+s\vv{Qx}$ \bigskip \\
+	$(g\circ f)(x)=g(P+r\vv{Px})=Q+s\vv{Q(P+r\vv{Px})}=Q+s(P+r\vv{Px})-sQ=Q+s\vv{QP}+sr\vv{Px}=$ FALTA ACABARLO \\
+	$\implies\widetilde{g\circ f}=\widetilde{g}\circ\widetilde{f}=srid_E$ \\
+	$\implies\left\{\begin{array}{l}
+		rs=1\implies g\circ f\text{ és una translació} \\
+		rs\neq 1\implies g\circ f\text{ és una homotècia} \\
+	\end{array}\right.$
+	Si $g\circ f$ és una translació amb $rs=1$, el seu vector de translació serà \\
+	$(g\circ f)(P)=g(P)=Q+s\vv{QP}$ \\
+	Així el vector de la translació que busquem és
+	$w=(g\circ f)(P)-P=Q+s\vv{QP}-P=-\vv{QP}+s\vv{QP}=(s-1)\vv{QP}$
+\end{proof}
+
+\begin{defn}
+	Sigui $\mathbb{L}=p+F$ una subvarietat lineal de $\mathbb{A}$, i tenim una descomposició $E=F\oplus G$, llavors un punt $x\in \mathbb{A}$
+	\[x=p+\vv{px}=p+\vv{px_F}+\vv{px_G}\]
+	Definim la simetria respecte de $\mathbb{L}$ i en la direcció $G$ com
+	\[s(x)=p+\vv{px_F}-\vv{px_G}\]
+\end{defn}
+
+\begin{prop}\begin{enumerate}
+	\item $x\in\mathbb{L}\implies s(x)=x$
+	\item $\forall x, s\neq id[s^2(x)=x]\implies s^2=id\implies \widetilde{s}^2=id$
+\end{enumerate}\end{prop}
+\begin{proof}\begin{enumerate}
+	\item FALTA ACABARLO
+	\item $s(s(x))=s(p+\vv{px_F}-\vv{px_G})=p+\vv{px_F}+\vv{px_G}=x$
+\end{enumerate}\end{proof}
+
+\begin{defn}
+	Sigui $x=p+\vv{px}=p+\vv{px_F}+\vv{px_G}$, definim la projecció sobre $\mathbb{L}$ en la direcció de $G$ com
+	\[\pi (x)=p+\vv{px_F}\]
+\end{defn}
+
+\begin{prop}
+	$x\in\mathbb{L}\implies\pi (x)=x$
+\end{prop}
+\begin{proof}
+	FALTA ACABAR
+\end{proof}
+
+\begin{defn}
+	Una aplicació afí diem que és una afinitat si $f$ és bijectiva(equivalentment $\widetilde{f}$ és bijectiva).
+\end{defn}
+
+\begin{prop}
+	Siguin $\mathbb{A}_1,\mathbb{A}_2$ espais afins, $p_1\in\mathbb{A}_1,p_2\in\mathbb{A}_2, h:E_1\to E_2$ una aplicació lineal. Llavors $\exists !$ aplicació afí $f:\mathbb{A}_1\to\mathbb{A}_2$ tal que $f(p_1)=p_2$ i $\widetilde{f}=h$.
+\end{prop}
+\begin{proof}
+	Existència de $f$: \\
+	Definim $f$ per
+	\[\forall x\in\mathbb{A}_1[f(x)=f(p_1+\vv{p_1x})=f(p_1)+h(\vv{p_1x})=p_2+h(\vv{p_1x})]\]
+	Veiem que $f$ és afí
+	\[f(x+\vv{u})=p_2+h(\vv{p_1(x+\vv{u})})=p_2+h(\vv{p_1x}+\vv{u})=p_2+h(\vv{p_1x})+h(\vv{u})=f(x)+h(\vv{u})\]
+	Llavors $f$ és afí i $\widetilde{f}=h$
+\end{proof}
+
+\begin{cor}1. 
+	Si $p_1\in\mathbb{A}_1, p_2\in\mathbb{A}_2,$ i $e_1,\dotsc ,e_n$ és una base de $E_1$ i $w_1,\dotsc ,w_n$ $n$ vectors de $E_2$, llavors $\exists !$ aplicació afí $f:\mathbb{A}_1\to\mathbb{A}_2$ tal que $f(p_1)=p_2,\widetilde{f}(e_i)=w_i,i=1,\dotsc ,n$
+\end{cor}
+\begin{cor}2. 
+	Si $p_0,p_1,\dotsc ,p_n$ són $n+1$ punts afinment indep de $\mathbb{A}_1,dim(\mathbb{A}_1)=n$, i $q_0,q_1,\dotsc ,q_n$ $n+1$ punts de $\mathbb{A}_2$, llavors $\exists !$ aplicació afí $f:\mathbb{A}_1\to\mathbb{A}_2$ tal que $f(p_i)=q_i,i=0,\dotsc ,n$
+\end{cor}
+\begin{proof}
+	Siguin $p_i=p_0+\vv{p_0p_i}$, com els punts $p_i$ són afinment independent, els $n$ vectors $e_i=\vv{p_0p_i}$ són l.i. \\
+	Per tant formen una base 
+	\[f(p_i)=q_i=q_0+\vv{q_0q_i}=f(p_0+\vv{p_0p_i})=q_0+\widetilde{f}(\vv{p_0p_i})\]
+	Després apliquem el cor.1 amb $\vv{e_i}=\vv{p_0p_i}$ i $\vv{w_i}=\vv{q_0q_i}$.
+\end{proof}
+
+\begin{prop}
+	Si $f:\mathbb{A}_1\to\mathbb{A}_2$ és afí llavors
+	\begin{itemize}
+		\item $f(\sum\limits_{i=1}^r\lambda_ip_i)=\sum\limits_{i=1}^r\lambda_if(p_i)$, si $\sum\limits_{i=1}^r\lambda_i=1$
+		\item $\widetilde{f}(\sum\limits_{i=1}^r\lambda_ip_i)=\sum\limits_{i=1}^r\lambda_if(p_i)$, si $\sum\limits_{i=1}^r\lambda_i=0$
+	\end{itemize}
+\end{prop}
+\begin{proof}
+	$f(\sum\lambda_ip_i)=f(\sum\lambda_ip_i-\sum\lambda_ip_0+p_0)=f(\sum\lambda_i\vv{p_0p_i}+p_0)=f(p_0)+\widetilde{f}(\sum\lambda_i\vv{p_0p_i})=f(p_0)+\sum\lambda_i\widetilde{f}(\vv{p_0p_i})=f(p_0)+\sum\lambda_i\vv{f(p_0)f(p_i)}=f(p_0)+\sum\lambda_i(f(p_i)-f(p_0))=\sum\lambda_if(p_i)$
+	FALTA ACABAR
+\end{proof}
+
+\begin{cor}
+	Siguin $p_1,p_2,p_3$ 3 punts alineats de $\mathbb{A}_1, p_2\neq p_3$, i sigui $f:\mathbb{A}_1\to\mathbb{A}_2$ una aplicació afí, llavors
+	\begin{itemize}
+		\item Si $f(p_2)\neq f(p_3),f(p_1)$ està sobre la recta que defineixen $f(p_2)$ i $f(p_3)$, i a més $(p_1,p_2,p_3)=(f(p_1),f(p_2),f(p_3))$
+		\item Si $f(p_2)=f(p_3), f(p_1)=f(p_2)=f(p_3)$
+	\end{itemize}
+\end{cor}
+\begin{proof}
+	$p_1=\lambda p_2+(1-\lambda )p_3\implies f(p_1)=\lambda f(p_2)+(1-\lambda )f(p_3)$ \\
+	$f(p_2)=f(p_3)\implies f(p_1)=f(p_2)$
+\end{proof}
+
+\subsection{Expressió d'una aplicació afí en coord. cartesianes}
+\label{ss_apcoca}
+
+Sigui $\mathbb{A}_1$ un espai afí amb un sistema de cordenades $\mathcal{R}_1=\{O_1;e_1,dotsc ,e_n\},\mathcal{R}_2=\{O_2;f_1,dotsc ,f_m\}$. Si $f:\mathbb{A}_1\to\mathbb{A}_2$ és una aplicació afí amb una aplicació lineal associada $\widetilde{f}$ té una matriu $M=(a_j^i)$ en aquestes bases.
+\[\widetilde{f}(\vv{e_i})=\sum\limits_{j=1}^ma_i^jf_j,i=1,\dotsc ,n\]
+\[M=\left(\begin{array}{cccc}
+	a_1^1&a_2^1&\cdots&a_n^1\\
+	a_1^2&a_2^2& &\vdots\\
+	\vdots& &\ddots&\vdots\\
+	a_1^m&\cdots&\cdots&a_n^m\\
+\end{array}\right)\hspace{2em}X=\left(\begin{array}{c}
+	x^1\\
+	\vdots\\
+	x^n\\
+\end{array}\right)\]
+Si $x\in E_1$, llavors $x=\sum x^i\vv{e_i}$, i així $\widetilde{f}(x)=\sum\widetilde{f}(\vv{e_i})x^i=MX$ \\
+Si $P$ és un punt de $\mathbb{A}_1$
+\[P=O_1+\vv{O_1P}=O_1+\sum\limits_{i=1}^nx^i\vv{e_i}\]
+aquestes $x^i$ son les coordenades de $P$ en la referència $\mathcal{R}_1$ \\
+Apliquem $f$ a $P$, tenim
+\[f(P)=f(O_1)+\widetilde{f}(\vv{O_1P})=O_2+\sum\limits_{j=1}^mb^jf_j+MX\]
+Llavors $(b_j)$ són les coordenades de $f(O_1)$ en $\mathcal{R}_2$
+En forma matricial resulta
+\begin{itemize}
+	\item Si $X$ és el vector columna de coordenades de $P$
+	\item Si $B$ és el vector columna de coordenades de $f(O_1)$
+	\item Si $Y$ és el vector columna de coordenades de $f(P)$
+\end{itemize}
+\[Y=B+MX\iff\left(\begin{array}{c}
+	y^1\\
+	\vdots\\
+	y^m\\
+\end{array}\right)=\left(\begin{array}{c}
+	b^1\\
+	\vdots\\
+	b^m\\
+\end{array}\right)+\left(\begin{array}{ccc}
+	a_1^1&\cdots&a_n^1\\
+	\vdots&\ddots&\vdots\\
+	a_1^m&\cdots&a_n^m\\
+\end{array}\right)\left(\begin{array}{c}
+	x^1\\
+	\vdots\\
+	x^n\\
+\end{array}\right)\]
+Això equival a la equació matricial
+\[\left(\begin{array}{c}
+	y^1\\
+	\vdots\\
+	y^m \\ \hline
+	1\\
+\end{array}\right)=\left(\begin{array}{ccc|c}
+	a_1^1&\cdots&a_n^1&b^1\\
+	\vdots&\ddots&\vdots&\vdots\\
+	a_1^m&\cdots&a_n^m&b^m\\ \hline
+	0&0&0&1\\
+\end{array}\right)\left(\begin{array}{c}
+	x^1\\
+	\vdots\\
+	x^n\\ \hline
+	1\\
+\end{array}\right)\]
+
+\subsection{Matriu d'una aplicació afí}
+\label{ss_maapaf}
+
+Sigui $\mathbb{A}_1,\mathbb{A}_2$ espais afins de referecies $\mathcal{R}_1=\{O_1;e_1,\dotsc ,e_n\},\mathcal{R}_2=\{O_2;e_i',\dotsc ,e_n'\}$ amb una aplicació afí $f:\mathbb{A}_1\to\mathbb{A}_2,\widetilde{f}:E_1\to E_2$ aplicació lineal, la matriu de $f$ serà
+\[M(f)=\left(\begin{array}{ccc|c}
+	\ddots&&\iddots&\vdots\\
+	&M(\widetilde{f})&&f(O_1)\\
+	\iddots&&\ddots&\vdots\\ \hline
+	0&\cdots&0&1\\
+\end{array}\right)\hspace{2em}M(\widetilde{f})=\left(\begin{array}{c|c|c}
+	\vdots&\vdots&\vdots\\
+	\widetilde{f}(e_1)&\widetilde{f}(e_2)&\widetilde{f}(e_3)\\
+	\vdots&\vdots&\vdots\\
+\end{array}\right)\]
+
+\begin{exmp}
+	$f$ translació de vector $w=w_1,\dotsc,w_n$
+	\[M(f)=\left(\begin{array}{ccc|c}
+		1&&0&w_1\\
+		&\ddots&&\vdots\\
+		0&&1&w_n\\ \hline
+		0&\cdots&0&1\\
+	\end{array}\right)\]
+\end{exmp}
+\begin{exmp}
+	$f$ homotècia de raó $r$ i centre $O'$, amb la referència $\mathcal{R}_1=\{O_1;e_1,\dotsc ,e_n\}$
+	\[M(f)=\left(\begin{array}{ccc|c}
+		r&&0&\vdots\\
+		&\ddots&&f(O_1)\\
+		0&&r&\vdots\\ \hline
+		0&\cdots&0&1\\
+	\end{array}\right)\]
+\end{exmp}
+\begin{exmp}
+	Simetria respecte a $\mathbb{L}=a+F$ i en la direcció de $G$, amb $E=F\oplus G, s(a+\vv{u})=a+\vv{u_f}-\vv{u_G}$, amb la referència $\mathcal{R}_1=\{O_1;e_1,\dotsc ,e_r,e_{r+1},\dotsc,en\}$ amb $\{e_1,\dotsc,e_{r+1}\}$ base de $F$ i $\{e_{r+1},\dotsc,e_n\}$ base de $G$
+	\[M(s)=\left(\begin{array}{ccc|ccc|c}
+		1&&0&&&&0\\
+		&\ddots&&&0&&\vdots\\ 
+		0&&1&&&&\vdots\\ \hline
+		&&&-1&&0&\vdots\\
+		&0&&&\ddots&&\vdots\\
+		&&&0&&-1&0\\ \hline
+		0&\cdots&\cdots&\cdots&\cdots&0&1\\
+	\end{array}\right)\]
+\end{exmp}
+\begin{exmp}
+	Projecció sobre $\mathbb{L}=a+F$ en la direcció de $G$ amb $E=F\oplus G,\pi(a+\vv{u})=a+\vv{u_F}$, en la referència anterior tindrem
+	\[M(\pi)=\left(\begin{array}{ccc|ccc|c}
+		1&&0&&&&0\\
+		&\ddots&&&0&&\vdots\\ 
+		0&&1&&&&\vdots\\ \hline
+		&&&&&&\vdots\\
+		&0&&&0&&\vdots\\
+		&&&&&&0\\ \hline
+		0&\cdots&\cdots&\cdots&\cdots&0&1\\
+	\end{array}\right)\]
+\end{exmp}
+
+\begin{lem}
+	Si $f:\mathbb{A}_1\to\mathbb{A}_2,g:\mathbb{A}_2\to\mathbb{A}_3$ aplicacions afins, amb referencies $\mathcal{R}_1,\mathcal{R}_2,\mathcal{R}_3$ per als espais afins $\mathbb{A}_1,\mathbb{A}_2,\mathbb{A}_3$ respectivament. Llavors
+	\[M(g\circ f)=M(g)M(f)\]
+\end{lem}
+\begin{proof}
+	FALTA ACABARLO
+\end{proof}
+
+\begin{defn}[Punts fixos d'una aplicació afí]
+	Sigui $f:\mathbb{A}\to\mathbb{A}$ una aplicació afí, diem que un punt $p\in\mathbb{A}$ és un punt fix si $f(p)=p$. Anomenem $\Gamma_f$ al conjunt de tots el punts fixos de $f$.
+	\[\Gamma_f=\{x\in\mathbb{A}:f(x)=x\}\subseteq\mathbb{A}\]
+\end{defn}
+
+\begin{prop}1.
+	Si $\Gamma_f\neq\varnothing$, llavors $\Gamma_f$ és una subvarietat lineal de $\mathbb{A}$ de espai director $Ker(\widetilde{f}-1)$, així $\Gamma_f=p+Ker(\widetilde{f}-1)$, amb $f(p)=p$, i per tant $dim(\Gamma_f)=dim(Ker(\widetilde{f}-1))$
+\end{prop}
+\begin{proof}
+	$\Gamma_f\neq\varnothing\implies\exists p:f(p)=p$ \\
+	Qualsevol altre $x\in\Gamma_f$ s'expressa com $x=p+\vv{px}$ \\
+	Aplicant la $f$ tenim
+	\[x=f(x)=f(p+\vv{px})=f(p)+\widetilde{f}(\vv{px})=p+\widetilde{f}(\vv{px})\]
+	\[\vv{px}=\widetilde{f}(\vv{px})\implies(\widetilde{f}-1)(\vv{px})=0\implies\vv{px}\in Ker(\widetilde{f}-1)\]
+\end{proof}
+
+\begin{exmp}\begin{enumerate}
+	\item Translació $\implies\Gamma_f=\varnothing$
+	\item Homotècia $\implies\Gamma_f=centre$
+	\item Simetria $\implies\Gamma_f=\mathbb{L}=a+F$
+	\item Projecció $\implies\Gamma_f=\mathbb{L}=a+F$
+\end{enumerate}\end{exmp}
+
+\begin{prop}2.
+	Si $\widetilde{f}$ no té el 1 com a valor propi, llavors $\Gamma_f=\{p\}$, o sigui $f$ té un únic punt fix.
+\end{prop}
+\begin{proof}
+	En efecte, tenim un punt $q\in\mathbb{A}$ qualsevol i els possibles punts fixos de $f$,$p$, seràn
+	\[p=q+\vv{qp}=f(p)=f(q)+\widetilde{f}(\vv{qp})\implies q-f(q)=\widetilde{f}(\vv{qp})-\vv{qp}=(\widetilde{f}-1)(\vv{qp})\]
+	\[\implies \vv{qp}=(\widetilde{f}-1)^{-1}(\vv{f(q)q})\]
+	Per tant $\vv{qp}$ és únic
+\end{proof}
+
+\begin{defn}[Sistema de punts fixos]
+	Sigui $f:\mathbb{A}\to\mathbb{A},\mathcal{R}$ referencia de $\mathbb{A}$, i $M$ la matriu de $f$. Anomenem sistema de punts fixos a $M(X)=X$, que és un sistema de n equacions amb n incognites.
+\end{defn}
+
+Probar que si $p_1,\dotsc,p_s$ són punts fixos, tota combinació afí dels $p_i$ també és un punt fix. Sigui $p=\sum\limits_{i=0}^s\lambda_ip_i$, amb $\sum\limits_{i=0}^s\lambda_i=1$
+\[f(p)=f(\sum\lambda_ip_i)=\sum\lambda_if(p_i)=\sum\lambda_ip_i=p\]
+
+\begin{defn}
+	Diem que $\mathbb{L}$ és una subvarietat lineal invariant per $f$ si $f(\mathbb{L})\subseteq\mathbb{L}$ \\
+	Les subvarietats lineals invariants de $dim(\mathbb{L})=0$ són els punts fixos \\
+	Les subvarietats lineals invariants de $dim(\mathbb{L})=1$ són els rectes fixes
+\end{defn}
+
+\begin{prop}
+	Sigui $\mathbb{L}$ una subvarietat lineal de $\mathbb{A}$, llavors $\mathbb{L}$ és invariant per $f\iff(\widetilde{f}(F)\subseteq F)\land(\vv{af(a)}\in F)$
+\end{prop}
+\begin{proof}
+	$\implies )\hspace{2em}$ Suposem $\mathbb{L}$ invariant per $f\implies f(\mathbb{L})\subseteq\mathbb{L}$
+	\[f(\mathbb{L})=f(a+F)=f(a)+\widetilde{f}(F)\subseteq a+F\implies\left\{\begin{array}{l}
+		\widetilde{f}(F)\subseteq F\\
+		\vv{af(a)}\in F\\
+	\end{array}\right.\]
+	$\impliedby )\hspace{2em}$ Suposem $(\widetilde{f}(F)\subseteq F)\land(\vv{af(a)}\in F)$
+	\[f(\mathbb{L})=f(a)+\widetilde{f}(F)\subseteq f(a)+F=a+F=\mathbb{L}\]
+\end{proof}
+
+\begin{cor}
+	Sigui $\mathbb{L}=a+<u>$ una recta de $A$, llavots $\mathbb{L}$ és invariant per $f\iff(\vv{u}$ és vector propi de $\widetilde{f})\land(\vv{af(a)}\in<u>)\iff(\vv{u}$ és vector propi de $\widetilde{f})\land(rang\left(\begin{array}{c}\vv{af(a)}\\\vv{u}\\\end{array}\right)=1)$
+\end{cor}
+
+\begin{exmp}1.
+	\[M(f)=\left(\begin{array}{cc|c}
+		1&0&2\\
+		0&1&1\\ \hline
+		0&0&1\\
+	\end{array}\right)\]
+	Punts fixos?
+	\[\left.\begin{array}{r}x+2=x\\y+1=y\\\end{array}\right\}\text{ No té solució}\implies\Gamma_f=\varnothing\] \\
+	Rectes fixes? $\vv{u}=(u,v)\neq 0$ és vector propi de $\widetilde{f}$ \\
+	Per tant, $\mathbb{L}$ és invariant $\iff rang\left(\begin{array}{c}\vv{af(a)}\\\vv{u}\\\end{array}\right)=1$ \\
+	\[f(a,b)=\left(\begin{array}{cc|c}
+		1&0&2\\
+		0&1&1\\ \hline
+		0&0&1\\
+	\end{array}\right)\left(\begin{array}{c}a\\b\\1\\\end{array}\right)=\left(\begin{array}{c}a+2\\b+1\\1\\\end{array}\right)\]
+	\[\vv{af(a)}=(a+2,b+1)-(a,b)=(2,1)\]
+	\[rang\left(\begin{array}{cc}2&1\\u&v\\\end{array}\right)=1\iff\text{Agafem }(u,v)=(2,1)\]
+	Per tant les rectes invariants són:
+	\[\mathbb{L}=(a,b)+<(2,1)>\text{, amb un }(a,b)\text{ qualsevol}\] 
+\end{exmp}
+\begin{exmp}2.
+	\[M(f)=\left(\begin{array}{cc|c}
+		1&1&2\\
+		0&1&1\\ \hline
+		0&0&1\\
+	\end{array}\right)\]
+	Punts fixos?
+	\[\left.\begin{array}{r}x+y+2=x\\y+1=y\\\end{array}\right\}\text{ No té solució}\implies\Gamma_f=\varnothing\] \\
+	Rectes fixes?$\vv{u}=e_1=(1,0)$ és vector propi del valor propi $\lambda=1$ de $\widetilde{f}$ \\
+	Per tant, $\mathbb{L}$ és invariant $\iff rang\left(\begin{array}{c}\vv{af(a)}\\\vv{u}\\\end{array}\right)=1$ \\
+	\[f(a,b)=\left(\begin{array}{cc|c}
+		1&0&2\\
+		0&1&1\\ \hline
+		0&0&1\\
+	\end{array}\right)\left(\begin{array}{c}a\\b\\1\\\end{array}\right)=\left(\begin{array}{c}a+b+2\\b+1\\1\\\end{array}\right)\]
+	\[\vv{af(a)}=(a+b+2,b+1)-(a,b)=(b+2,1)\]
+	\[rang\left(\begin{array}{cc}b+2&1\\1&0\\\end{array}\right)=2\neq 1\implies\nexists\text{ rectes invariants}\]
+\end{exmp}
+\begin{exmp}3.
+	\[M(f)=\left(\begin{array}{cc|c}
+		1&1&0\\
+		0&1&0\\ \hline
+		0&0&1\\
+	\end{array}\right)\]
+	Punts fixos?
+	\[\left.\begin{array}{r}x+y=x\\y=y\\\end{array}\right\}\implies y=0\text{ recta de putns fixos}\] \\
+	Rectes fixes? $\vv{u}=e_1=(1,0)$ és vector propi del valor propi $\lambda=1$ de $\widetilde{f}$ \\
+	Per tant, $\mathbb{L}$ és invariant $\iff rang\left(\begin{array}{c}\vv{af(a)}\\\vv{u}\\\end{array}\right)=1$ \\
+	\[f(a,b)=\left(\begin{array}{cc|c}
+		1&1&0\\
+		0&1&0\\ \hline
+		0&0&1\\
+	\end{array}\right)\left(\begin{array}{c}a\\b\\1\\\end{array}\right)=\left(\begin{array}{c}a+b\\b\\1\\\end{array}\right)\]
+	\[\vv{af(a)}=(a+b,b)-(a,b)=(b,0)\]
+	\[rang\left(\begin{array}{cc}b&0\\1&0\\\end{array}\right)=1\forall a,b\]
+	Per tant les rectes invariants són:
+	\[\mathbb{L}=(a,b)+<(2,1)>\text{, amb un }(a,b)\text{ qualsevol}\]
+\end{exmp}
+
+\begin{defn}
+	Sigui $\mathbb{A}$ un espai afí amb $dim(\mathbb{A})=n$, un hiperpla $\mathbb{H}$ és una subvarietat lineal de $dim(\mathbb{H})=n-1$
+\end{defn}
+
+\begin{prop}
+	Sigui $f:\mathbb{A}\to\mathbb{A}$ una aplicació afí, que en una referència $\mathcal{R}$ té matriu $M$. Llavors, els hiperplans invariants per $f$ són els de l'equació
+	\[A_1x_1+\dotsb+A_nx_n+B=0\]
+	amb $(A_1,\dotsc,A_n,B)$ un vector propi de $M^T$ i $(A_1,\dotsc,A_n)\neq 0$
+\end{prop}
+\begin{proof}
+	Anomenem $V=(A_1 \dotsc A_n B)$ i $X=\left(\begin{array}{c}x_1\\\vdots\\x_n\\1\\\end{array}\right)$, de forma que la equació del hiperpla
+	\[A_1x_1+\dotsb+A_nx_n+B=0\iff V\cdot X=0\]
+	Com $M$ és la matriu de $f$, les coordenades de $f(x)=y$ en funció de les $x$ són, si $X$ són les coordenades de $x$, $Y$ les coordenades de $y$:
+	\[Y=M\cdot X\]
+	Per tant si $\mathbb{H}$ és l'hiperpla $VX=0$
+	\[f^{-1}(\mathbb{H})=\{x\in\mathbb{A}:f(x)\in\mathbb{H}\}=\{X:V\cdot M\cdot X=0\}\]
+	Així $\mathbb{H}$ és invarriant $\iff f(\mathbb{H})\subseteq\mathbb{H}\iff\mathbb{H}\subseteq f^{-1}(\mathbb{H})$ \\
+	Per tant el sistema
+	\[\left.\begin{array}{r}VMX=0\\VX=0\\\end{array}\right\}\text{ és de rang 1 }\iff VM=\lambda V\]
+	Com $V$ són vectors fila, transposem tota la equació
+	\[M^TV^T=\lambda V^T\]
+	On $V^T$ és un vector director propi de $M^T$ amb $(A_1,\dotsc,A_n)\neq 0$
+\end{proof}
+
+\begin{exmp}
+	Trobar els hiperplans invariants de l'aplicació
+	\[M(f)=\left(\begin{array}{ccc|c}3&1&0&0\\0&2&1&1\\0&0&2&0\\\hline 0&0&0&1\\\end{array}\right)\]
+	1. Trobem $M^T$
+	\[M(f)=\left(\begin{array}{ccc|c}3&0&0&0\\1&2&0&0\\0&1&2&0\\\hline 0&1&0&1\\\end{array}\right)\]
+	2. Trobem els valors propis de $M^T$: 3, 2 i 1\\
+	veps de 1: \\
+	\[e_4=(0,0,0,1)\implies\nexists\text{ hiperplans invariants per }\lambda=1\]
+	veps de 3: \\
+	\[Ker(M^T-3I)=Ker\left(\begin{array}{ccc|c}0&0&0&0\\1&-1&0&0\\0&1&-1&0\\\hline 0&1&0&-2\\\end{array}\right)\implies\left.\begin{array}{r}x-y=0\\y-z=0\\y-2t=0\\\end{array}\right\}\implies V_3=(1,1,1,\frac{1}{2})\]
+	\[\implies x+y+z+\frac{1}{2}=0\]
+	veps de 2: \\
+	\[\cdots\]
+\end{exmp}
+
+\begin{prop}
+	$\forall f:\mathbb{A}^n\to\mathbb{A}^n$ aplicació afí, $\exists$ una referencia (de Jordan) tal que la matriu de $f$ en aquesta referència és una matriu de Jordan superior
+\end{prop}
+
+Aplicacions afins de dim 1
+
+Sigui $f:\mathbb{A}\to\mathbb{A}$ una aplicació afí en una referència de Jordan $\mathcal{R}$, amb $dim(A)=1$, la matriu $M$ podria ser dels següents tipus:
+\begin{itemize}
+	\item Si $f$ té punts fixos és
+	\begin{itemize}
+		\item La identitat $\iff\left(\begin{array}{c|c}1&0\\\hline0&1\\\end{array}\right)$ 
+		\item Una homotècia de rao $\lambda\neq 1\iff\left(\begin{array}{c|c}\lambda&0\\\hline0&1\\\end{array}\right)$
+	\end{itemize}
+	\item Si $f$ no té punts fixos és una translació $\iff\left(\begin{array}{c|c}1&1\\\hline0&1\\\end{array}\right)$
+\end{itemize}
+
+Aplicacions afins de dim 2
+
+Sigui $f:\mathbb{A}\to\mathbb{A}$ una aplicació afí en una referència de Jordan $\mathcal{R}$, amb $dim(A)=2$, la matriu $M$ podria ser dels següents tipus:
+\begin{itemize}
+	\item $\left(\begin{array}{cc|c}1&&\\0&1&\\\hline0&0&1\\\end{array}\right)$
+	\begin{itemize}
+		\item $\left(\begin{array}{cc|c}1&0&\\0&1&\\\hline0&0&1\\\end{array}\right)\left\{\begin{array}{l}
+			\text{Amb punts fixos: }\\
+			\left(\begin{array}{cc|c}1&0&0\\0&1&0\\\hline0&0&1\\\end{array}\right)\iff f\text{ identitat}\\
+			\text{Sense punts fixos: }\\
+			\left(\begin{array}{cc|c}1&0&0\\0&1&1\\\hline0&0&1\\\end{array}\right)\iff f\text{ translació}\\
+		\end{array}\right.$
+		\item $\left(\begin{array}{cc|c}1&1&\\0&1&\\\hline0&0&1\\\end{array}\right)\left\{\begin{array}{l}
+			\text{Amb punts fixos: }\\
+			\left(\begin{array}{cc|c}1&1&0\\0&1&0\\\hline0&0&1\\\end{array}\right)\iff f\text{ homologia especial}\\
+			\text{Sense punts fixos: }\\
+			\left(\begin{array}{cc|c}1&1&0\\0&1&1\\\hline0&0&1\\\end{array}\right)\iff f\text{ composició de una homologia especial i una translació}\\
+		\end{array}\right.$
+	\end{itemize}
+	\item $\left(\begin{array}{cc|c}\lambda&0&\\0&1&\\\hline0&0&1\\\end{array}\right)\left\{\begin{array}{l}
+		\text{Amb punts fixos: }\\
+		\left(\begin{array}{cc|c}\lambda&0&0\\0&1&0\\\hline0&0&1\\\end{array}\right)\iff f\text{ homologia general}\\
+		\text{Sense punts fixos: }\\
+		\left(\begin{array}{cc|c}\lambda&0&0\\0&1&1\\\hline0&0&1\\\end{array}\right)\iff f\text{ composició d'homologia general i translació}\\
+	\end{array}\right.$
+	\item $\left(\begin{array}{cc|c}\lambda&&\\0&\mu&\\\hline0&0&1\\\end{array}\right)$
+	\begin{itemize}
+		\item Amb punts fixos: $\left(\begin{array}{cc|c}\lambda&0&0\\0&\lambda &0\\\hline0&0&1\\\end{array}\right)\iff f$ homotècia
+		\item Amb punts fixos: $\left(\begin{array}{cc|c}\lambda&1&0\\0&\lambda &0\\\hline0&0&1\\\end{array}\right)$
+		\item Amb punts fixos: $\left(\begin{array}{cc|c}\lambda&0&0\\0&\mu &0\\\hline0&0&1\\\end{array}\right)$
+	\end{itemize}
+\end{itemize}
+
+\section{Espais euclidis}
+
+\subsection{Producte escalar}
+
+Sigui $E$ un e.v. sobre $\mathbb{R}$
+
+\begin{defn}
+	Un producte escalar sobre $E$ és una aplicació $\phi:E\times E\to\mathbb{R}$ tal que
+	\begin{itemize}
+		\item $\phi$ bilineal $\iff\left\{\begin{array}{rcl}\phi(\vv{x}+\vv{x}',\vv{y})&=&\phi(\vv{x},\vv{y})+\phi(\vv{x}',\vv{y})\\\phi(\lambda \vv{x},\vv{y})&=&\lambda\phi(\vv{x},\vv{y})\\\phi(\vv{x},\vv{y}+\vv{y}')&=&\phi(\vv{x},\vv{y})+\phi(\vv{x},\vv{y}')\\\phi(\vv{x},\lambda \vv{y})&=&\lambda\phi(\vv{x},\vv{y})\\\end{array}\right.$
+		\item $\phi$ simètrica $\iff\phi(\vv{x},\vv{y})=\phi(\vv{y},\vv{x})$
+		\item $\phi$ definida positiva $\iff(\vv{x}=\vv{0}\iff\phi(\vv{x},\vv{x})=0)\land(\vv{x}\neq \vv{0}\implies\phi(\vv{x},\vv{x})>0)$
+	\end{itemize}
+	Denotem el producte escalar per $\phi(\vv{x},\vv{y})=\vv{x}\cdot\vv{y}=<\vv{x},\vv{y}>=<\vv{x}|\vv{y}>$
+\end{defn}
+
+
