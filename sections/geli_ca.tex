@@ -1121,4 +1121,71 @@ Sigui $E$ un e.v. sobre $\mathbb{R}$
 	Denotem el producte escalar per $\phi(\vv{x},\vv{y})=\vv{x}\cdot\vv{y}=<\vv{x},\vv{y}>=<\vv{x}|\vv{y}>$
 \end{defn}
 
+\begin{exmp}
+	Sigui $E=\mathbb{R}^n,\vv{x}=(x_1,\dotsc,x_n)\in E,\vv{y}=(y_1,\dotsc,y_n)\in E$, definim
+	\[\phi(\vv{x},\vv{y})=<\vv{x},\vv{y}>=x_1y_1+\dotsb+x_ny_n=\sum\limits_{i=0}^nx_iy_i\]
+	Veiem que és un producte escalar sobre $E$:
+	\begin{itemize}
+		\item $\phi$ bilineal?
+		\[\begin{array}{ccl}
+			<\vv{x}+\vv{x}',\vv{y}>&=&\sum(x_i+x_i')y_i=\sum x_iy_i+\sum x_i'y_i=<\vv{x},\vv{y}>+<\vv{x}',\vv{y}>\\
+			<\lambda\vv{x},\vv{y}>&=&\sum\lambda x_iy_i=\lambda\sum x_iy_i=\lambda<\vv{x},\vv{y}>\\
+			<\vv{x},\vv{y}+\vv{y}'>&=&\sum x(y_i+y_i')=\sum x_iy_i+\sum x_iy_i'=<\vv{x},\vv{y}>+<\vv{x},\vv{y}'>\\
+			<\vv{x},\lambda\vv{y}>&=&\sum x_i\lambda y_i=\lambda\sum x_iy_i=\lambda<\vv{x},\vv{y}>\\
+		\end{array}\]
+		\item $\phi$ simètrica? \\
+		Per la commutativa de la $\cdot$ en els $\mathbb{R}$
+		\[<\vv{x},\vv{y}>=\sum x_iy_i=\sum y_ix_i=<\vv{y},\vv{x}>\]
+		\item $\phi$ definida positiva?
+		\[\vv{x}=0\iff<\vv{x},\vv{x}>=0\cdot 0+\dotsb+0\cdot 0=0\]
+		\[\vv{x}\neq 0\implies<\vv{x},\vv{x}>=x_1x_1+\dotsb+x_nx_n=x_1^2+\dotsb+x_n^2>0\]
+	\end{itemize}
+\end{exmp}
 
+\begin{defn}
+	Sigui $\phi$ una forma bilineal sobre $E$ amb $dim(E)$ finita, agafem $e_1,\dotsc,e_n$ una base de $E$ y dos vectors qualsevol $x=\sum x_ie_i,y=\sum y_ie_i$. Per tant
+	\[\phi(x,y)=\phi(\sum x_ie_i,\sum y_ie_i)=\sum x_iy_i\phi(e_i,e_j)=\]
+	\[=\left(\begin{array}{ccc}x_1&\cdots&x_n\\\end{array}\right)\left(\begin{array}{ccc}
+		\phi(e_1,e_1)&\cdots&\phi(e_1,e_n)\\
+		\vdots&\ddots&\vdots\\
+		\phi(e_n,e_1)&\cdots&\phi(e_n,e_n)\\	
+	\end{array}\right)\left(\begin{array}{c}y_1 \\\vdots\\y_n\\\end{array}\right)=X^T\cdot G\cdot Y\]
+	Anomenem matriu de Gramm de $\phi$ en la base $\{e_i\}$ a la matriu $G$
+	\[G=(a_{ij})=(\phi(e_i,e_j))\]
+\end{defn}
+
+\begin{prop}
+	La forma bilineal $\phi$ és simètrica $\iff\phi(e_i,e_j)=\phi(e_j,e_i)\implies G$ és simètrica
+\end{prop}
+
+\begin{defn}
+	Sigui $E$ un e.v. sobre $\mathbb{R}$ i fixem un producte vectorial sobre $E$, dos vectors $\vv{x},\vv{y}\in E$ diem que són ortogonals si $<\vv{x},\vv{y}>=0$, i ho denotarem per $\vv{x}\perp\vv{y}$ \\
+	Una base de $E,v_1,\dotsc,v_n$ diem que és ortogonal si $<v_i,v_j>=0$, si $i\neq j$ \\
+	Una base de $E,v_1,\dotsc,v_n$ diem que és unitaria o normalitzada si $\forall i[<v_i,v_j>=1]$ \\
+	Una base de $E,v_1,\dotsc,v_n$ diem que és ortonotmal si $<v_i,v_j>=0$, si $i\neq j$ i $\forall i[<v_i,v_j>=1]$ 
+	\[<v_i,v_j>=\delta_{ij}\text{ delta de Kronecker}\]
+\end{defn}
+
+\begin{prop}
+	La matriu de $<,>$ en una base ortonormal és
+	\[\left(\begin{array}{ccc}
+		1&&0\\
+		&\ddots&\\
+		0&&1\\	
+	\end{array}\right)\]
+	i per tant en questa base el producte escalar és calcula, sigui $\vv{x}=\sum x_iv_i,\vv{y}=\sum y_iv_i$
+	\[<\vv{x},\vv{y}>=\sum x_iy_i\]
+\end{prop}
+
+\begin{defn}
+	Sigui $A$ un subconjunt de $E$, definim l'ortogonal de $A$ per
+	\[A^\perp=\{x\in E:\forall a\in A[<x,a>=0]\}\]
+\end{defn}
+
+\begin{prop}\begin{enumerate}
+	\item $A^\perp$ és un subespai vectorial de $E$
+\end{enumerate}\end{prop}
+\begin{proof}\begin{enumerate}
+	\item $x,y\in A^\perp,\lambda\in\mathbb{R}\mathop{\implies}\limits^{?}x+\lambda y\in A^\perp$ \\
+	\[\forall a\in A[<x+\lambda,a>=\underbrace{<x,a>}_{0}+\underbrace{\lambda<y,a>}_{0}=0]\implies x+\lambda y\in A^\perp\]
+\end{enumerate}\end{proof}
