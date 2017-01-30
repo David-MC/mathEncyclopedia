@@ -1,0 +1,17 @@
+Sabem que:
+\[(u \mult a) = (a) \iff ((u \mult a) \subset (a)) \land ((u \mult a) \supset (a))\]
+
+Llavors:
+
+$\parclprf{\subset} \quad \begin{array}[t]{r@{\ }l}
+	\forall b \in A \tq b \mult a \in (a)	& \implies \exists u \in A \tq u \mult a \in (a)  \\
+						& \implies \forall b \in A \tq (b \mult (u \mult a) \in (u \mult a) \implies b \mult (u \mult a) \in (a)) \\
+						& \implies (u \mult a) \subset (a)
+\end{array}$
+
+$\parclprf{\supset} \quad \begin{array}[t]{r@{\ }l}
+	u \text{ unitat}	& \implies \exists u^{-1} \in A \tq u^{-1} \mult (u \mult a) \in (u \mult a) \\
+				& \implies u^{-1} \mult (u \mult a) = (u^{-1} \mult u) \mult a = a \in (u \mult a) \\
+				& \implies \forall b \in A \tq (b \mult a \in (a) \implies b \mult a \in (u \mult a)) \\
+				& \implies (a) \subset (u \mult a)
+\end{array}$

@@ -1,0 +1,20 @@
+Sabem que:
+\[\begin{aligned}
+	u \in A \text{ és unitat}		& \overset{def}{\iff} \exists u^{-1} \in A \tq (u \mult u^{-1} = u^{-1} \mult u = 1) \\
+	I \subseteq A \text{ és ideal de } A	& \overset{def}{\iff} ((I,+) \text{ subgrup abelia}) \land (\forall a \in A,~b \in I \tq a \mult b \in I) \\
+\end{aligned}\]
+
+Primer de tot, veiem que:
+\[\left.\begin{aligned}
+	\exists u^{-1} \in A \tq (u \mult u^{-1} = u^{-1} \mult u = 1) \\
+	u^{-1} \in A,~u \in I \implies u^{-1} \mult u \in I
+\end{aligned}\right\} \implies u^{-1} \mult u = 1 \in I\]
+
+Aplicant el resultat anterior, tenim:
+\[\forall a \in A \tq (a \mult 1 = 1 \mult a = a) \implies \forall a \in A \tq a \mult 1 = a \in I\]
+
+Per tant:
+\[\left.\begin{aligned}
+	\forall a \in A \tq a \mult 1 = a \in I \implies A \subseteq I \\
+	I \text{ és ideal de } A \implies I \subseteq A
+\end{aligned}\right\} \implies I = A\]

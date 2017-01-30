@@ -1,0 +1,89 @@
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[catalan]{babel}
+
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{hyperref}
+
+\usepackage[retainorgcmds]{IEEEtrantools}
+
+%\setlength{\hoffset}{-15mm}
+%\renewcommand{\baselinestretch}{1.25}
+\setlength{\voffset}{-25mm}
+\setlength{\textheight}{242mm}
+\setlength{\topmargin}{10mm}
+\setlength{\headheight}{10mm}
+\setlength{\headsep}{10mm}
+\setlength{\footskip}{1.2cm} %def=30pt=1.054cm
+\setlength{\textwidth}{155mm}
+\setlength{\oddsidemargin}{0mm}
+\setlength{\evensidemargin}{0mm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\pagenumbering{arabic}
+\setlength{\parindent}{0truecm}
+
+% Page headers & footers
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\newcommand{\tq}{:\ }
+\newcommand{\parclprf}[1]{\begin{array}{r|}#1\\\hline\end{array}}
+\newcommand{\mult}{}
+%\newcommand{\invr}[1]{#1^{-1}}
+\newcommand{\statment}[1]{{\bf \input{stm/#1}}\medskip\par}
+\newcommand{\solution}[2][\unskip]{\framebox{{\bf Solucio #1}}\par\input{sol/#2}\par}
+%\solution[1]{rutaarchivo}
+
+\begin{document}
+\begin{enumerate}
+
+  \item \statment{1}
+    %\input{sol/1}
+  \begin{enumerate}
+    \item \statment{1.d/1_a}
+      \solution{1.d/1_a}
+    \item \statment{1.d/1_b}
+      \solution{1.d/1_b}
+    \item \statment{1.d/1_c}
+      \solution{1.d/1_c}
+    \item \statment{1.d/1_d}
+      \solution{1.d/1_d}
+  \end{enumerate}
+
+  \item \statment{2}
+    \solution{2}
+
+%   \item \statment{3}
+%     \solution{3}
+%
+%   \item \statment{4}
+%     %\input{sol/5}
+%   \begin{enumerate}
+%     \item \statment{4.d/4_a}
+%       \solution{4.d/4_a}
+%     \item \statment{4.d/4_b}
+%       \solution{4.d/2_b}
+%     \item \statment{4.d/4_c}
+%       \solution{4.d/4_c}
+%   \end{enumerate}
+%
+%   \item \statment{5}
+%     %\input{sol/1}
+%   \begin{enumerate}
+%     \item \statment{5.d/5_a}
+%       \solution{5.d/5_a}
+%     \item \statment{5.d/5_b}
+%       \solution{5.d/5_b}
+%   \end{enumerate}
+
+\end{enumerate}
+\end{document}

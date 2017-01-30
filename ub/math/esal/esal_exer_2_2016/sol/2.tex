@@ -1,0 +1,28 @@
+Sigui $(\mathbb{Z} / m \mathbb{Z})^*$ el conjunt dels elements invertibles de $\mathbb{Z} / m \mathbb{Z}$ i $z(\mathbb{Z} / m \mathbb{Z})$ el conjunt dels elements divisors de 0 de $\mathbb{Z} / m \mathbb{Z}$. Primer de tot trobarem els elements de $(\mathbb{Z} / m \mathbb{Z})^*$:
+\[\begin{aligned}
+	x \in (\mathbb{Z} / m \mathbb{Z})^* 	& \iff \exists y \in \mathbb{Z} / m \mathbb{Z} \tq x \mult y \equiv 1\ (mod\ m) \\
+						& \iff \exists \lambda \in \mathbb{Z} \tq x \mult y = 1 + \lambda \mult m \\
+						& \iff x \mult y - \lambda \mult m = 1 \\
+						& \implies \exists d \in \mathbb{Z} \tq [mcd(x, n) = d \implies d \mid x \land d \mid m] \\
+						& \implies d \mid x \mult y - \lambda \mult m = 1 \\
+						& \implies d = mcd(x, m) = 1
+\end{aligned}\]
+\[\begin{aligned}
+	x \in \mathbb{Z} / m \mathbb{Z} \tq mcd(x, m) = 1	& \implies \exists a,\ b \in \mathbb{Z} \tq x \mult a + m \mult b = 1 \\
+								& \iff x \mult a = 1 - m \mult b \\
+								& \iff x \mult a \equiv 1\ (mod\ m) \\
+								& x \in (\mathbb{Z} / m \mathbb{Z})^*
+\end{aligned}\]
+
+Per tant, $(\mathbb{Z} / m \mathbb{Z})^* = \{x \in \mathbb{Z} / m \mathbb{Z} \mid mcd(x, m) = 1\}$.\medskip
+
+Llavors, busquem els elements de $z(\mathbb{Z} / m \mathbb{Z})$. Sabem que si un element dsadas
+
+Suposem $a \in \mathbb{Z} / m \mathbb{Z} \text{ no invertible}$, i considerem $mcd(a, m) = d$, tal que $\exists \lambda \tq a = \lambda \mult d$ i  $m = \mu  \mult d$. Llavors, sigui $b \in \mathbb{Z} / m \mathbb{Z}$:
+\[\begin{aligned}
+	a \mult b \equiv 0\ (mod\ m)	& \iff \exists k \in \mathbb{Z} \tq a \mult b = 0 + k \mult m \\
+					& \iff a \mult b = (\lambda \mult d) \mult b \\
+					& \implies [b = \mu \neq 0 \implies a \mult b = (\lambda \mult d) \mult \mu = \lambda \mult m  = 0 + k \mult m] \\
+					& \implies a \text{ divisor de 0}
+\end{aligned}\]
+

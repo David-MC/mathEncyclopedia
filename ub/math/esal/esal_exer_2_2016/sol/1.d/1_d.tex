@@ -1,0 +1,27 @@
+Demostrem les dos implicacions:\medskip
+
+$\parclprf{\Rightarrow} \quad$ Sabem que $(a) = (b)$:
+\[\left.\begin{aligned}
+	a \in (b) & \implies \exists c \in A \tq a = c \mult b \\
+	b \in (a) & \implies \exists d \in A \tq b = d \mult a
+\end{aligned}\right\}
+\implies a = c \mult b = c \mult (d \mult a) = (c \mult d) \mult a \begin{aligned}[t]
+	& \implies a - a \mult d \mult c = 0 \\
+	& \implies a \mult (1 - d \mult c) = 0
+\end{aligned}\]
+
+Llavors, com $A$ és un domini d'integritat, tenim $1 - d \mult c = 0$ o  $a = 0$.
+\begin{itemize}
+	\item $1 - d \mult c = 0 \implies d \mult c = 1 \implies d \text{ invertible i } b = d \mult a = a \mult d$
+	\item $\begin{aligned}[t]
+		a = 0 	& \implies (a) = (0)= \{0\} = (b) \\
+			& \implies b = 0 \\
+			& \implies \forall u \in A \tq (u \text{ invertible} \implies 0 = 0 \mult u)
+	\end{aligned}$
+\end{itemize}
+
+$\parclprf{\Leftarrow} \quad$ Sigui $u \in A$ unitat, $b = u \mult a \implies (b) = (ua)$. Llavors:
+\[\left.\begin{aligned}
+	\forall c \in A \tq [c \mult (u \mult a) \in (u \mult a) \implies c \mult (u \mult a) = (c \mult u) \mult a \in (a)] & \implies (u \mult a) \subset (a) \\
+	\forall c \in A \tq [c \mult a \in (a) \implies c \mult a = (c \mult u^{-1}) \mult (u \mult a) \in (u \mult a)] & \implies (a) \subset (u \mult a)
+\end{aligned}\right\} \implies (a) = (b)\]

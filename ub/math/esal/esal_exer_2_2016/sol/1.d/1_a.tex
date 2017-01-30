@@ -1,0 +1,17 @@
+Sabem que:
+\[\begin{aligned}
+	a \in A \text{ és unitat}		& \overset{def}{\iff} \exists a^{-1} \in A \tq (a \mult a^{-1} = a^{-1} \mult a = 1) \\
+	a \in A \text{ no és divisor de 0}	& \overset{def}{\iff} \nexists b \in A \tq (b \neq 0 \implies a \mult b = 0) \\
+						& \iff \forall b \in A \tq (a \mult b = 0 \implies b = 0)
+\end{aligned}\]
+
+Llavors només cal demostrar:
+\[(\exists a^{-1} \in A \tq (a \mult a^{-1} = a^{-1} \mult a = 1)) \implies (\forall b \in A \tq (a \mult b = 0 \implies b = 0))\]
+
+Per tant:
+\[\begin{aligned}
+	\forall b \in A \tq (a \mult b = 0)	& \implies a^{-1} \mult (a \mult b) = a^{-1} \mult 0 \\
+						& \implies (a^{-1} \mult a) \mult b = 0 \\
+						& \implies 1 \mult b = 0 \\
+						& \implies b = 0
+\end{aligned}\]
